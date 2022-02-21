@@ -13,6 +13,14 @@ const renderer = new THREE.WebGLRenderer({
 
 const controls = new OrbitControls( camera, renderer.domElement );
 
+controls.enableZoom=false;
+controls.maxZoom=1;
+controls.enablePan=false;
+controls.minPolarAngle=1;
+controls.maxPolarAngle=2;
+controls.rotateSpeed=0.5;
+controls.update();
+
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(new THREE.Color("#003"))
