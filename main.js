@@ -27,6 +27,13 @@ renderer.setClearColor(new THREE.Color("#003"))
 
 camera.position.setZ(20);
 
+const atmosphere = new THREE.PointLight(0xffffff, 0.25, 0, 1.5);
+atmosphere.position.set(15,15,15);
+scene.add( atmosphere );
+
+const lightSource = new THREE.AmbientLight( 0xffffff );
+scene.add( lightSource );
+
 const globe = new THREE.Mesh(
   new THREE.SphereGeometry(10, 64, 32), 
   new THREE.MeshStandardMaterial({ 
