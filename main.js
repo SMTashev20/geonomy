@@ -37,7 +37,7 @@ scene.add( lightSource );
 const globe = new THREE.Mesh(
   new THREE.SphereGeometry(10, 64, 32), 
   new THREE.MeshStandardMaterial({ 
-    map: new THREE.TextureLoader().load('img/day.jpg'),
+    map: new THREE.TextureLoader().load('img/earth.jpg'),
     normalMap: new THREE.TextureLoader().load('img/normal.jpg'),
     normalScale: new THREE.Vector2(100,100)
   })
