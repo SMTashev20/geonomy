@@ -10,6 +10,12 @@ const renderer = new THREE.WebGLRenderer({
   antialias:true
 });
 
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(new THREE.Color("#003"))
+
+camera.position.setZ(20);
+
 const globe = new THREE.Mesh(
   new THREE.SphereGeometry(10, 64, 32), 
   new THREE.MeshStandardMaterial({ 
