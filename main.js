@@ -19,6 +19,17 @@ const globe = new THREE.Mesh(
   })
 );
 
+globe.material.needsUpdate=true;
+
 scene.add(globe);
 
-renderer.render(scene, camera);
+function animate() {
+  requestAnimationFrame(animate);
+
+  controls.update();
+  globe.rotation.y-=0.0025;
+  globe.rotation.x+=0.00025;
+  renderer.render(scene, camera);
+}
+
+animate();
