@@ -8,8 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^7.0.26",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "three": "^0.137.5"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
