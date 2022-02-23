@@ -2,8 +2,8 @@ import { BufferGeometry, Vector2, Vector3 } from "three";
 import { Loader } from "three";
 import { FileLoader } from "three/src/loaders/FileLoader";
 
-export const mapInt = (x, in_min, in_max, out_min, out_max) => {
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+export const mapInt = (x, inMin, inMax, outMin, outMax) => {
+  return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 }
 
 export class MapLoader extends Loader {
