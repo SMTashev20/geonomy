@@ -1,5 +1,6 @@
 import { useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
+import { MapLoader } from '../util/MapLoader';
 import * as THREE from 'three';
 
 export const mapInt = (x, in_min, in_max, out_min, out_max) => {
@@ -24,52 +25,12 @@ export function Globe(props) {
         bufferCamera.current.position.setZ(0);
 
         {
-            const loader = new THREE.FileLoader();
-            let data = await (loader.loadAsync(
+            const loader = new MapLoader();
+            let meshes = await loader.loadAsync(
                 'https://datahub.io/core/geo-countries/r/countries.geojson',
                 event => console.log(event)
-            )
-                .then(value => JSON.parse(value)))
+            );
 
-            console.log(data);
-
-            let meshes = [];
-
-            if (data.type === 'FeatureCollection') {
-                data.features.forEach(feature => {
-                    if (feature.type === 'Feature') {
-                        if (feature.geometry.type === 'Polygon') {
-                            let points = [];
-
-                            feature.geometry.coordinates.forEach(coordinateCollection => {
-                                coordinateCollection.forEach(coordinate => {
-                                    points.push(new THREE.Vector3(
-                                        mapInt(coordinate[0], -180, 180, -4096, 4096),
-                                        mapInt(coordinate[1], -90, 90, -2048, 2048)
-                                    ));
-                                });
-                            });
-
-                            meshes.push(new THREE.BufferGeometry().setFromPoints(points));
-                        } else if (feature.geometry.type === 'MultiPolygon') {
-                            feature.geometry.coordinates.forEach(multiPolygonCollection => {
-                                let points = []
-                                
-                                multiPolygonCollection.forEach(coordinateCollection => {
-                                    coordinateCollection.forEach(coordinate => {
-                                        points.push(new THREE.Vector3(
-                                            mapInt(coordinate[0], -180, 180, -4096, 4096),
-                                            mapInt(coordinate[1], -90, 90, -2048, 2048)
-                                        ));
-                                    });
-                                });
-
-                                meshes.push(new THREE.BufferGeometry().setFromPoints(points));
-                            });
-                        }
-                    }
-                });
-            }
             meshes.forEach(mesh => {
                 const line = new THREE.Line(
                     mesh,
@@ -77,7 +38,6 @@ export function Globe(props) {
                 );
 
                 line.position.setZ(-3072);
-
                 bufferScene.current.add(line);
             })
         }
