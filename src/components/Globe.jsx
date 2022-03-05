@@ -1,11 +1,7 @@
 import { useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useRef, useState } from 'react';
-import { MapLoader } from '../util/MapLoader';
+import { MapLoader, mapInt } from '../util/MapLoader';
 import * as THREE from 'three';
-
-export const mapInt = (x, in_min, in_max, out_min, out_max) => {
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
 
 /**
  * 
@@ -50,25 +46,25 @@ export function Globe(props) {
             error => console.error(error)
         );
 
-        // new THREE.TextureLoader().load(
-        //     'day.jpg',
-        //     loadedTexture => {
-        //         const mesh = new THREE.Mesh(
-        //             new THREE.BoxGeometry(loadedTexture.image.width, loadedTexture.image.height, 1),
-        //             new THREE.MeshBasicMaterial({ map: loadedTexture })
-        //         );
+        new THREE.TextureLoader().load(
+            'day.jpg',
+            loadedTexture => {
+                const mesh = new THREE.Mesh(
+                    new THREE.BoxGeometry(loadedTexture.image.width, loadedTexture.image.height, 1),
+                    new THREE.MeshBasicMaterial({ map: loadedTexture })
+                );
 
-        //         mesh.position.setZ(-2925); // - (2048 + 512 + 256 + 64 + 32 + 8 + 4 + 1)
-        //         bufferScene.current.add(mesh);
+                mesh.position.setZ(-2925); // - (2048 + 512 + 256 + 64 + 32 + 8 + 4 + 1)
+                bufferScene.current.add(mesh);
 
-        //         setUpdateFrame(true);
-        //     },
-        //     loadEvent => console.log(loadEvent),
-        //     error => console.error(error)
-        // );
+                setUpdateFrame(true);
+            },
+            loadEvent => console.log(loadEvent),
+            error => console.error(error)
+        );
         
         {
-            const ambientLight = new THREE.AmbientLight([0, 0, 0]);
+            const ambientLight = new THREE.AmbientLight([1, 1, 1], .25);
             bufferScene.current.add(ambientLight);
         }
         
@@ -83,7 +79,9 @@ export function Globe(props) {
         setUpdateFrame(false);
     }, [updateFrame]);
 
-    return <mesh {...props}>
+    return <mesh {...props} onPointerMove={e => {
+        console.log('y:', mapInt(e.uv.y, 0, 1, -90, 90), 'x:', mapInt(e.uv.x, 0, 1, -180, 180))
+    }}>
         <sphereGeometry args={[4, 64, 32]} />
         <meshStandardMaterial
             map={bufferTexture.current.texture}
