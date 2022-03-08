@@ -79,7 +79,7 @@ export function Globe(props) {
         setUpdateFrame(false);
     }, [updateFrame]);
 
-    return <mesh {...props} onPointerMove={e => {
+    return <mesh {...props} onClick={e => {
         console.log('y:', mapInt(e.uv.y, 0, 1, -90, 90), 'x:', mapInt(e.uv.x, 0, 1, -180, 180))
     }}>
         <sphereGeometry args={[4, 64, 32]} />
