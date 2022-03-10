@@ -31,6 +31,15 @@ function App() {
             </meshBasicMaterial>
             GEONOMY
           </Text>
+          
+          <Text
+            position={[0, -0.5, 3]}
+            font="./fonts/Raleway-SemiBold.woff"
+            fontSize={0.2}
+          >
+            <meshBasicMaterial/>
+            The world is in your hands!
+          </Text>
       
       <Stars />
       <CoordinateContext.Provider
