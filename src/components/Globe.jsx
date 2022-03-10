@@ -47,7 +47,7 @@ export function Globe(props) {
         );
 
         new THREE.TextureLoader().load(
-            'day.jpg',
+            './img/day.jpg',
             loadedTexture => {
                 const mesh = new THREE.Mesh(
                     new THREE.BoxGeometry(loadedTexture.image.width, loadedTexture.image.height, 1),
