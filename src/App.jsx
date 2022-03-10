@@ -13,7 +13,7 @@ function App() {
       width: "100%",
       height: "100%"
     }}>
-      <OrbitControls minDistance={3} maxDistance={10} />
+      <OrbitControls minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
       <color attach="background" args={["black"]} />
       <ambientLight color={[0.25, 0.25, 0.25]} />
       <pointLight position={[8, 8, 8]} />
