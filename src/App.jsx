@@ -18,15 +18,19 @@ function App() {
       <ambientLight color={[0.25, 0.25, 0.25]} />
       <pointLight position={[8, 8, 8]} />
 
-      <Html
-        as='div'
-        occlude
-        center
-        transform
+          <Text 
         position={[0, 0, 3]}
+            color={'#8A4ADD'}
+            // outlineWidth={0.01}
+            // outlineColor={'#8A4ADD'}
+            font="./fonts/JosefinSans-Bold.woff"
+            fontSize={1}
       >
-        <h1 style={{color: "white"}}>Geonomy</h1>
-      </Html>
+            <meshBasicMaterial>
+              <GradientTexture stops={[0, 1]} colors={['#fff', '#8A4ADD']} size={100}/>
+            </meshBasicMaterial>
+            GEONOMY
+          </Text>
       
       <Stars />
       <CoordinateContext.Provider
