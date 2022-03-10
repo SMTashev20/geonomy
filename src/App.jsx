@@ -3,6 +3,7 @@ import { Globe } from './components/Globe';
 import { OrbitControls, Stars, Text, GradientTexture } from '@react-three/drei';
 import { Html } from '@react-three/drei';
 import CoordinateContext from './CoordinateContext';
+import { Suspense } from 'react'; 
 
 function App() {
   return (
