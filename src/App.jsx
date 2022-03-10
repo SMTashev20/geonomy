@@ -21,13 +21,13 @@ function App() {
 
         <Suspense fallback={null}>
           <Text 
-        position={[0, 0, 3]}
+            position={[0, 0, 3]}
             color={'#8A4ADD'}
             // outlineWidth={0.01}
             // outlineColor={'#8A4ADD'}
             font="./fonts/JosefinSans-Bold.woff"
             fontSize={1}
-      >
+          >
             <meshBasicMaterial>
               <GradientTexture stops={[0, 1]} colors={['#fff', '#8A4ADD']} size={100}/>
             </meshBasicMaterial>
