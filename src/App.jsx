@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { Globe } from './components/Globe';
-import { OrbitControls, Stars, Plane } from '@react-three/drei';
+import { OrbitControls, Stars, Text, GradientTexture } from '@react-three/drei';
 import { Html } from '@react-three/drei';
 import CoordinateContext from './CoordinateContext';
 
