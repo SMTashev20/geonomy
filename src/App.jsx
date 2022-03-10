@@ -18,6 +18,7 @@ function App() {
       <ambientLight color={[0.25, 0.25, 0.25]} />
       <pointLight position={[8, 8, 8]} />
 
+        <Suspense fallback={null}>
           <Text 
         position={[0, 0, 3]}
             color={'#8A4ADD'}
@@ -40,6 +41,8 @@ function App() {
             <meshBasicMaterial/>
             The world is in your hands!
           </Text>
+          
+        </Suspense>
       
       <Stars />
       <CoordinateContext.Provider
