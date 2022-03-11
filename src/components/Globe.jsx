@@ -1,7 +1,8 @@
 import { useFrame, useThree } from '@react-three/fiber';
-import { useEffect, useRef, useState, useContext } from 'react';
+import { useEffect, useRef, useState, useContext, forwardRef } from 'react';
 import { MapLoader, mapInt } from '../util/MapLoader';
 import CoordinateContext from '../CoordinateContext';
+import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
 /**
@@ -9,9 +10,10 @@ import * as THREE from 'three';
  * @param {import('@react-three/fiber').MeshProps} props 
  * @returns mesh
  */
-export function Globe(props) {
+const Globe = forwardRef((props, ref) => {
     const { gl } = useThree();
     const coordContext = useContext(CoordinateContext);
+    const countryDataContext = useContext(CountryDataContext);
 
     const bufferTexture = useRef(new THREE.WebGLRenderTarget(8192, 4096));
     const bufferScene = useRef(new THREE.Scene());
@@ -25,7 +27,13 @@ export function Globe(props) {
         bufferCamera.current.position.setZ(0);
 
         Promise.all([
-            new MapLoader().loadAsync('https://datahub.io/core/geo-countries/r/countries.geojson', console.log),
+            new Promise((res, rej) => {
+                try {
+                    res(new MapLoader().parse(countryDataContext.data));
+                } catch (e) {
+                    rej(e);
+                }
+            }),
             new THREE.TextureLoader().loadAsync('./img/earth.jpg', console.log),
             new THREE.TextureLoader().loadAsync('./img/normal.jpg', console.log)
         ]).then(res => {
@@ -71,7 +79,7 @@ export function Globe(props) {
         setUpdateFrame(false);
     }, [updateFrame]);
 
-    return <mesh {...props} onClick={e => {
+    return <mesh {...props} ref={ref} onClick={e => {
         console.log('y:', mapInt(e.uv.y, 0, 1, -90, 90), 'x:', mapInt(e.uv.x, 0, 1, -180, 180))
         coordContext.setCoordinate([mapInt(e.uv.y, 0, 1, -90, 90), mapInt(e.uv.x, 0, 1, -180, 180)]);
     }}>
@@ -80,4 +88,6 @@ export function Globe(props) {
             map={bufferTexture.current.texture}
         />
     </mesh>
-}
+});
+
+export { Globe };

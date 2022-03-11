@@ -1,6 +1,7 @@
-import { forwardRef, Suspense, useState } from "react";
-import { Text, GradientTexture, Html } from "@react-three/drei";
+import { forwardRef, Suspense, useContext, useState } from "react";
+import { Text, GradientTexture } from "@react-three/drei";
 import { useHref, useLinkClickHandler } from 'react-router-dom'
+import CountryDataContext from '../CountryDataContext'
 
 const HoverText = forwardRef(({ hoverColor, children, ...props }, ref) => {
     const [hovered, setHovered] = useState(false);
@@ -48,7 +49,9 @@ const LinkHoverText = forwardRef(
     }
 );
 
-export function StartScreen() {
+export function StartScreen({ ...props }) {
+    const countryDataContext = useContext(CountryDataContext);
+
     return <Suspense fallback={null}>
         <Text
             position={[0, 0, 3]}
@@ -71,7 +74,7 @@ export function StartScreen() {
             to="/start"
         >
             <meshBasicMaterial />
-            The world is in your hands!
+            {countryDataContext.loading ? countryDataContext.loadingStatus : "The world is in your hands!"}
         </LinkHoverText>
     </Suspense>;
 }
