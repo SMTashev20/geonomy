@@ -1,11 +1,17 @@
 import { Canvas } from '@react-three/fiber';
 import { Globe } from './components/Globe';
-import { OrbitControls, Stars, Text, GradientTexture } from '@react-three/drei';
+import { OrbitControls, Stars } from '@react-three/drei';
 import { Html } from '@react-three/drei';
 import CoordinateContext from './CoordinateContext';
-import { Suspense } from 'react'; 
+import { StartScreen } from './components/StartScreen';
+import { Suspense, useState } from 'react';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+
+
 
 function App() {
+  const [coordinate, setCoordinate] = useState([-1, -1]);
+
   return (
     <Canvas style={{
       position: "absolute",
@@ -14,39 +20,15 @@ function App() {
       width: "100%",
       height: "100%"
     }}>
-      <OrbitControls minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
       <color attach="background" args={["black"]} />
       <ambientLight color={[0.25, 0.25, 0.25]} />
       <pointLight position={[8, 8, 8]} />
-
-      <Suspense fallback={null}>
-        <Text 
-          position={[0, 0, 3]}
-          color={'#8A4ADD'}
-          font="./fonts/JosefinSans-Bold.woff"
-          fontSize={1}
-        >
-          <meshBasicMaterial>
-            <GradientTexture stops={[0, 1]} colors={['#ffffff', '#8A4ADD']} size={100} />
-          </meshBasicMaterial>
-          GEONOMY
-        </Text>
-        
-        <Text
-          position={[0, -0.5, 3]}
-          font="./fonts/Raleway-SemiBold.woff"
-          fontSize={0.2}
-        >
-          <meshBasicMaterial/>
-          The world is in your hands!
-        </Text>
-      </Suspense>
-      
       <Stars />
+      
       <CoordinateContext.Provider
         value={{
-          available: false,
-          coordinates: [ 0.0, 0.0 ]
+          coordinate,
+          setCoordinate
         }}
       >
         <Globe
@@ -54,9 +36,16 @@ function App() {
           scale={0.6}
         />
       </CoordinateContext.Provider>
-      
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<StartScreen />} />
+          <Route path="/start" element={<OrbitControls minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>} />
+        </Routes>
+      </BrowserRouter>
     </Canvas>
   )
+
 }
 
 export default App
