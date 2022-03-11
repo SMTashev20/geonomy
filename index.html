@@ -2,17 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="../img/icons/logo-Dark.ico" />
+    <link rel="icon" type="image/svg+xml" href="../img/html-assets/icons/logo-Dark.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" type="text/css" href="../src/style.css">
+    <title>Geonomy</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="../src/main.jsx"></script>
     <noscript>
-      <div class="no-script-info">
-        You seem to have disabled JavaScript. Please enable JavaScript to view our project.
-      </div>
+      <div class="content">
+        <div class="img-container">
+            <img src = "../img/html-assets/no-script/noJS-logo.png">
+        </div>
+
+        <div class="text-container">
+            <p>
+                It appears that you have blocked your brower from 
+                using <span class="gradient-text">JavaScript</span>. 
+                Please follow this quick guide and reload the page:
+            </p>
+
+            <p id="enable-link">
+                <a  href = "https://www.enable-javascript.com/">https://www.enable-javascript.com/</a>
+            </p>
+        </div>
+    </div>
     </noscript>
   </body>
 </html>
