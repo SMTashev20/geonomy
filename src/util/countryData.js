@@ -11,7 +11,7 @@ export function useCountryData(geoJsonUrl) {
         new FileLoader().loadAsync(
             geoJsonUrl,
             progress => {
-                setLoadingStatus(`${progress.loaded}/${progress.total}`);
+                setLoadingStatus(`${(progress.loaded / progress.total * 100).toFixed(2)}%`);
             },
         )
         .then(data => {

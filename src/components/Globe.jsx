@@ -5,6 +5,9 @@ import CoordinateContext from '../CoordinateContext';
 import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
+import earthImg from '../../img/earth.jpg';
+import normalEarthImg from '../../img/normal.jpg';
+
 /**
  * 
  * @param {import('@react-three/fiber').MeshProps} props 
@@ -34,8 +37,8 @@ const Globe = forwardRef((props, ref) => {
                     rej(e);
                 }
             }),
-            new THREE.TextureLoader().loadAsync('./img/earth.jpg', console.log),
-            new THREE.TextureLoader().loadAsync('./img/normal.jpg', console.log)
+            new THREE.TextureLoader().loadAsync(earthImg, console.log),
+            new THREE.TextureLoader().loadAsync(normalEarthImg, console.log)
         ]).then(res => {
             const lineGroup = new THREE.Group();
             lineGroup.name = "CountryLines";

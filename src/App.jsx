@@ -8,8 +8,9 @@ import { useEffect, useRef, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Rotate } from './components/Rotate';
 import { useCountryData } from './util/countryData';
-
-
+import { Position } from './components/Position';
+import { Camera } from 'three';
+import { PositionCamera } from './components/PositionCamera';
 
 function App() {
   const [coordinate, setCoordinate] = useState([-1, -1]);
@@ -57,8 +58,13 @@ function App() {
               <Route path="/" element={<>
                 <StartScreen />
                 <Rotate refToRotate={globeRef} xAxis yAxis negative speed={0.001} />
+                <Position refToPosition={globeRef} position={[0, 0, -3]} />
+                <PositionCamera position={[0, 0, 5]} rotation={[0, 0, 0]} />
               </>} />
-              <Route path="/start" element={<OrbitControls minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>} />
+              <Route path="/start" element={<>
+                <OrbitControls minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
+                <Position refToPosition={globeRef} position={[0, 0, 0]} />
+              </>} />
             </Routes>
           </BrowserRouter>
         </CoordinateContext.Provider>
