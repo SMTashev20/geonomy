@@ -5,6 +5,7 @@ import CountryDataContext from '../CountryDataContext';
 
 import JosefinSansBoldFont from '../../fonts/JosefinSans-Bold.woff';
 import RalewaySemiBoldFont from '../../fonts/Raleway-SemiBold.woff';
+import { useLocation } from "wouter";
 
 const HoverText = forwardRef(({ hoverColor, children, ...props }, ref) => {
     const [hovered, setHovered] = useState(false);
@@ -14,46 +15,11 @@ const HoverText = forwardRef(({ hoverColor, children, ...props }, ref) => {
     return <Text {...props} ref={ref} color={hovered ? hoverColor : null} onPointerOver={over} onPointerOut={out}>
         {children}
     </Text>
-})
-
-const LinkHoverText = forwardRef(
-    (
-        {
-            onClick,
-            replace = false,
-            state,
-            target,
-            to,
-            ...props
-        },
-        ref
-    ) => {
-        let href = useHref(to);
-        let handleClick = useLinkClickHandler(to, {
-            replace,
-            state,
-            target,
-        });
-
-        return (
-            <HoverText
-                {...props}
-                onClick={(event) => {
-                    onClick?.(event);
-                    if (!event.defaultPrevented) {
-                        event.preventDefault = () => {}; // so useLinkClickHandler doesn't try to call undefined
-                        handleClick(event);
-                    }
-                }}
-                ref={ref}
-                target={target}
-            />
-        );
-    }
-);
+});
 
 export function StartScreen({ ...props }) {
     const countryDataContext = useContext(CountryDataContext);
+    const [location, setLocation] = useLocation();
 
     return <Suspense fallback={null}>
         <group position={[0, 0, 0]}>
@@ -89,16 +55,16 @@ export function StartScreen({ ...props }) {
                         <meshBasicMaterial />
                         {countryDataContext.loadingStatus}   
                     </HoverText> :
-                    <LinkHoverText
+                    <HoverText
                         position={[0, -0.5, 0]}
                         font={RalewaySemiBoldFont}
                         fontSize={0.2}
                         hoverColor="red"
-                        to="/start"
+                        onClick={() => setLocation('/start')}
                     >
                         <meshBasicMaterial />
                         The world is in your hands!
-                    </LinkHoverText>
+                    </HoverText>
             }
         </group>
     </Suspense>;

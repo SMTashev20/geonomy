@@ -1,12 +1,14 @@
 import { useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useRef, useState, useContext, forwardRef } from 'react';
 import { MapLoader, mapInt } from '../util/MapLoader';
-import CoordinateContext from '../CoordinateContext';
 import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
 import earthImg from '../../img/earth.jpg';
 import normalEarthImg from '../../img/normal.jpg';
+import { useLinkClickHandler } from 'react-router-dom';
+import { useLocation } from 'wouter';
+import { useRoute } from 'wouter';
 
 /**
  * 
@@ -15,13 +17,15 @@ import normalEarthImg from '../../img/normal.jpg';
  */
 const Globe = forwardRef((props, ref) => {
     const { gl } = useThree();
-    const coordContext = useContext(CoordinateContext);
     const countryDataContext = useContext(CountryDataContext);
 
     const bufferTexture = useRef(new THREE.WebGLRenderTarget(8192, 4096));
     const bufferScene = useRef(new THREE.Scene());
     const bufferCamera = useRef(new THREE.PerspectiveCamera(70, 8192 / 4096, 1, 100000));
     const [updateFrame, setUpdateFrame] = useState(false);
+
+    const [location, setLocation] = useLocation();
+    const [matchStart] = useRoute('/start');
 
     // scene init
     useEffect(() => {
@@ -83,8 +87,10 @@ const Globe = forwardRef((props, ref) => {
     }, [updateFrame]);
 
     return <mesh {...props} ref={ref} onClick={e => {
-        console.log('y:', mapInt(e.uv.y, 0, 1, -90, 90), 'x:', mapInt(e.uv.x, 0, 1, -180, 180))
-        coordContext.setCoordinate([mapInt(e.uv.y, 0, 1, -90, 90), mapInt(e.uv.x, 0, 1, -180, 180)]);
+        let coordinates = [mapInt(e.uv.y, 0, 1, -90, 90), mapInt(e.uv.x, 0, 1, -180, 180)]
+
+        if (matchStart)
+            setLocation(`/${coordinates[0]},${coordinates[1]}`)
     }}>
         <sphereGeometry args={[4, 64, 32]} />
         <meshStandardMaterial
