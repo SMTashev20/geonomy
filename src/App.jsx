@@ -9,6 +9,7 @@ import { Rotate } from './components/Rotate';
 import { useCountryData } from './util/countryData';
 import { Position } from './components/Position';
 import { PositionCamera } from './components/PositionCamera';
+import { About } from './components/About';
 
 function App() {
   const [loading, loadingStatus, error, data] = useCountryData('https://datahub.io/core/geo-countries/r/countries.geojson');
@@ -75,6 +76,7 @@ function App() {
           </Router>
         </CountryDataContext.Provider>
       </Canvas>
+      <About />
     </>
   )
 
