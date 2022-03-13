@@ -4,7 +4,7 @@ import { MapLoader, mapInt } from '../util/MapLoader';
 import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
-import earthImg from '../../img/earth.jpg';
+import earthImg from '../../img/map.png';
 import normalEarthImg from '../../img/normal.jpg';
 import { useLinkClickHandler } from 'react-router-dom';
 import { useLocation } from 'wouter';
