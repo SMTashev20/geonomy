@@ -11,7 +11,9 @@ import { Position } from './components/Position';
 import { PositionCamera } from './components/PositionCamera';
 import { About } from './components/About';
 import { Information } from './components/Information';
-
+/**
+ * mmmmmmmmmmm
+ */
 function App() {
   const [loading, loadingStatus, error, data] = useCountryData('https://datahub.io/core/geo-countries/r/countries.geojson');
 

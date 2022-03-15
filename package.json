@@ -14,6 +14,7 @@
     "@mui/material": "^5.5.1",
     "@react-three/drei": "^8.10.6",
     "@react-three/fiber": "^7.0.26",
+    "braintree-jsdoc-template": "^3.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.2",

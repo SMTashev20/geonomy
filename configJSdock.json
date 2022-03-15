@@ -1,0 +1,18 @@
+{
+    "source": {
+        "includePattern": ".+\\.js(doc|x)?$",   
+        "include": ["."],                      
+        "exclude": ["node_modules"]            
+    },
+    "recurseDepth": 10,                        
+    "opts": {          
+        "recurse": true,
+        "encoding": "utf8",
+        "template": "node_modules/braintree-jsdoc-template"
+    },
+    "templates": {
+        "referenceTitle": "Geonomy",
+        "disableSort": false,
+        "collapse": true
+    }                 
+}

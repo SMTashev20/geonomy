@@ -12,7 +12,7 @@ import { useRoute } from 'wouter';
 
 /**
  * 
- * @param {import('@react-three/fiber').MeshProps} props 
+ * 
  * @returns mesh
  */
 const Globe = forwardRef((props, ref) => {
