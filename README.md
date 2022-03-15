@@ -1,7 +1,8 @@
 # Team Geonomy
 
 <p align = "center">
-  
+    <img src="logo-Light.png#gh-light-mode-only" height="550"/>
+    <img src="logo-Dark.png#gh-dark-mode-only" height="550"/>
 </p>
 
 <p align = "center">
