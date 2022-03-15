@@ -4,8 +4,8 @@ import { MapLoader, mapInt } from '../util/MapLoader';
 import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
-import earthImg from '../../img/map.png';
-import normalEarthImg from '../../img/normal.jpg';
+import earthImg from '../../img/map-light.png';
+import normalEarthImg from '../../img/normal.png';
 import { useLinkClickHandler } from 'react-router-dom';
 import { useLocation } from 'wouter';
 import { useRoute } from 'wouter';
@@ -72,6 +72,9 @@ const Globe = forwardRef((props, ref) => {
         
         {
             const ambientLight = new THREE.AmbientLight([1, 1, 1], .25);
+            const pointLight = new THREE.PointLight(0xFF0000, 1, 100);
+            pointLight.position.set(75, 75, 75);
+            bufferScene.current.add(pointLight);
             bufferScene.current.add(ambientLight);
         }
         

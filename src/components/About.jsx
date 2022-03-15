@@ -11,7 +11,6 @@ import {
   CardName, 
   CardDescription 
 } from './AboutStyles';
-
 export function About() {
     return (
         <>
