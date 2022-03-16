@@ -35,3 +35,10 @@
 <p> To install our project on your machine you just need to clone it. This can be done by <I>In the CMD</I> : </p>
 <pre>git clone https://github.com/SMTashev20/geonomy.git</pre>
 <p>Open it in VS Code and type in the terminal <pre>npm install</pre> and finally type: <pre>npm run dev</pre></p>
+
+## 🧒 Our Team
+
+- <a href = "https://github.com/SMTashev20"> Stanislav Tashev </a> (Scrum trainer)
+- <a href = "https://github.com/AEManov20"> Alexander Manov </a> (Back-end Developer)
+- <a href = "https://github.com/VTIvanov20"> Veleri Ivanov </a> (Front-end Developer)
+- <a href = "https://github.com/MMPetrov20"> Mihail Petrov </a> (Designer)
