@@ -1,8 +1,8 @@
 # Team Geonomy
 
 <p align = "center">
-    <img src="logo-Light.png#gh-light-mode-only" height="550"/>
-    <img src="logo-Dark.png#gh-dark-mode-only" height="550"/>
+    <img src="img/logos/logo-Light.png#gh-light-mode-only" height="550"/>
+    <img src="img/logo/logo-Dark.png#gh-dark-mode-only" height="550"/>
 </p>
 
 <p align = "center">
@@ -24,7 +24,7 @@
 ## 📄 Documents
 
 
-<h1> 📥 Installing </h1>
+## 📥 Installing
 
 
 ## 🧒 Our Team
