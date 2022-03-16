@@ -31,4 +31,7 @@
 ### Presenting
 - [Presentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EdTqM0a8r9pIjn9tQe_Tv4oB-Zvg1AMdNjPzSbMeK9z1eQ?e=jezRBE)
 
-
+## 📥 Installing
+<p> To install our project on your machine you just need to clone it. This can be done by <I>In the CMD</I> : </p>
+<pre>git clone https://github.com/SMTashev20/geonomy.git</pre>
+<p>Open it in VS Code and type in the terminal <pre>npm install</pre> and finally type: <pre>npm run dev</pre></p>
