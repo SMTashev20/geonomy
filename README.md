@@ -13,3 +13,13 @@
     <img src="https://img.shields.io/github/languages/count/SMTashev20/geonomy?style=flat-square">
 </p>
 
+## 💻 About
+<p>This is a website about with interatcive map and very interesting information about different coutries</p>
+
+## ✅ Features
+<ul>
+    <li>Interactive map</li>
+    <li>Interesting facts</li>
+    <li>A lot of information</li>
+</ul>
+
