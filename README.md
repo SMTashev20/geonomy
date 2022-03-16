@@ -23,3 +23,12 @@
     <li>A lot of information</li>
 </ul>
 
+
+## 📄 Documents
+### Documentation
+  - [JS doc](https://codingburgas-my.sharepoint.com/:x:/g/personal/smtashev20_codingburgas_bg/Ecrd_m4S2kBKpss5TO_FWKwBXhatldZY82F0dBKy2u-u_w?e=hNp1eW)
+  - [Documentation](https://codingburgas-my.sharepoint.com/:b:/g/personal/smtashev20_codingburgas_bg/Ea75_gKPERVDrst2_QJ3gFwBvPllIC-GBi_9BqJxX9wtiw?e=apsnOz)
+### Presenting
+- [Presentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EdTqM0a8r9pIjn9tQe_Tv4oB-Zvg1AMdNjPzSbMeK9z1eQ?e=jezRBE)
+
+
