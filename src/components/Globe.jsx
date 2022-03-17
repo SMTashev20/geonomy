@@ -6,13 +6,12 @@ import * as THREE from 'three';
 
 import earthImg from '../../img/map-light.png';
 import normalEarthImg from '../../img/normal.png';
-import { useLinkClickHandler } from 'react-router-dom';
 import { useLocation } from 'wouter';
 import { useRoute } from 'wouter';
 
 /**
  * 
- * 
+ * @param {import('@react-three/fiber').MeshProps} props 
  * @returns mesh
  */
 const Globe = forwardRef((props, ref) => {
@@ -25,6 +24,8 @@ const Globe = forwardRef((props, ref) => {
     const [updateFrame, setUpdateFrame] = useState(false);
 
     const [location, setLocation] = useLocation();
+    const [dragged, setDragged] = useState(false);
+    const [clicked, setClicked] = useState(false);
     const [matchStart] = useRoute('/start');
 
     // scene init
@@ -83,17 +84,23 @@ const Globe = forwardRef((props, ref) => {
     
     // scene render
     useEffect(() => {
+        console.log('render');
         gl.setRenderTarget(bufferTexture.current);
         gl.render(bufferScene.current, bufferCamera.current);
         gl.setRenderTarget(null);
         setUpdateFrame(false);
     }, [updateFrame]);
 
-    return <mesh {...props} ref={ref} onClick={e => {
-        let coordinates = [mapInt(e.uv.y, 0, 1, -90, 90), mapInt(e.uv.x, 0, 1, -180, 180)]
+    return <mesh {...props} ref={ref} onPointerDown={e => setClicked(true)} onPointerMove={e => clicked ? setDragged(true) : null} onClick={e => {
+        if (!dragged) {
+            let coordinates = [mapInt(e.uv.y, 0, 1, -90, 90), mapInt(e.uv.x, 0, 1, -180, 180)]
 
-        if (matchStart)
-            setLocation(`/${coordinates[0]},${coordinates[1]}`)
+            if (matchStart)
+                setLocation(`/map/${coordinates[0]},${coordinates[1]}`)
+        }
+
+        setClicked(false);
+        setDragged(false);
     }}>
         <sphereGeometry args={[4, 64, 32]} />
         <meshStandardMaterial

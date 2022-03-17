@@ -10,7 +10,8 @@ import { useCountryData } from './util/countryData';
 import { Position } from './components/Position';
 import { PositionCamera } from './components/PositionCamera';
 import { About } from './components/About';
-import { Information } from './components/Information';
+import { CoordinateScreen } from './components/CoordinateScreen';
+
 /**
  * mmmmmmmmmmm
  */
@@ -57,23 +58,11 @@ function App() {
                 <PositionCamera position={[0, 0, 5]} rotation={[0, 0, 0]} />
               </Route>
               <Route path="/start">
-                <OrbitControls minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
+                <OrbitControls enablePan={false} minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
                 <Position refToPosition={globeRef} position={[0, 0, 0]} />
               </Route>
-              <Route path="/:coords">
-                <OrbitControls minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
-                <Html
-                  as='div'
-                  transform
-                  distanceFactor={5}
-                  position={[0, 0, 0]}
-                  style={{
-                    backgroundColor: "white"
-                  }}
-
-                >
-                  <h1>say what</h1>
-                </Html>
+              <Route path="/map/:coords">
+                <CoordinateScreen />
               </Route>
             </Switch>
           </Router>

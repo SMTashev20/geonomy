@@ -22,12 +22,28 @@ import {
     ClimateGradient
 } from './InformationStyles';
 
-export function Information() {
+function numberToWords(number) {
+    const words = {
+        'Million': 1000000,
+        'Hundred Thousand': 100000,
+        'Thousand': 1000
+    };
+
+    for (let key in words) {
+        if (words[key] <= number) {
+            return [number / words[key], key];
+        }
+    }
+
+    return [number];
+}
+
+export function Information({ country, population, wealth, climate, ...props }) {
     return(
         <>
             <ParentSection>
-                <DarkHeading>Florida</DarkHeading>
-                <WhiteHeading>Florida</WhiteHeading>
+                <DarkHeading>{country}</DarkHeading>
+                <WhiteHeading>{country}</WhiteHeading>
                 <Paragraph>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ratione similique corporis deleniti quidem quas in recusandae sit accusamus? Vitae soluta officia fugiat consequuntur repudiandae iusto libero ea laboriosam provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ratione similique corporis deleniti quidem quas in recusandae sit accusamus? Vitae soluta officia fugiat consequuntur repudiandae iusto libero ea laboriosam provident.
                 </Paragraph>
@@ -35,15 +51,17 @@ export function Information() {
                 <Statistics>
                     <Population>
                         <PersonIcon style={{ fontSize: 70 }}></PersonIcon>
-                        <PopulationText>~<PopulationGradient>22</PopulationGradient> million people</PopulationText>
+                        <PopulationText>
+                            ~<PopulationGradient>{numberToWords(population)[0].toFixed(1)}</PopulationGradient> {numberToWords(population)[1]} people
+                        </PopulationText>
                     </Population>
                     <Finance>
                         <AttachMoneyIcon style={{ fontSize: 70 }}></AttachMoneyIcon>
-                        <FinanceText>- Very <FinanceGradient>wealthy</FinanceGradient> area</FinanceText>
+                        <FinanceText>Very <FinanceGradient>{wealth}</FinanceGradient> area</FinanceText>
                     </Finance>
                     <Climate>
                         <WhatshotIcon style={{ fontSize: 70 }}></WhatshotIcon>
-                        <ClimateText> - <ClimateGradient>Hot</ClimateGradient> climate</ClimateText>
+                        <ClimateText><ClimateGradient>{climate}</ClimateGradient> climate</ClimateText>
                     </Climate>
                 </Statistics>
             </ParentSection>

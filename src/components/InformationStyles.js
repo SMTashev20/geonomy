@@ -74,6 +74,7 @@ export const Population = styled.div`
 export const PopulationText = styled.div`
     position: absolute;
     margin-top: 1.5vh;
+    margin-left: 70px;
     display: inline-block;
     text-align: right;
 `;

@@ -1,6 +1,5 @@
 import { forwardRef, Suspense, useContext, useState, useEffect } from "react";
 import { Text, GradientTexture } from "@react-three/drei";
-import { useHref, useLinkClickHandler } from 'react-router-dom'
 import CountryDataContext from '../CountryDataContext';
 
 import JosefinSansBoldFont from '../../fonts/JosefinSans-Bold.woff';
