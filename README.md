@@ -18,13 +18,12 @@
 
 ## 🗂️ Used technologies
 <p align="left">
-    <img src="https://img.icons8.com/color/344/figma--v1.png" alt="Figma logo">
-    <img src="https://img.icons8.com/ios-filled/452/github.png#gh-light-mode-only" alt="GitHub white theme logo"/>
-    <img src="https://img.icons8.com/ios/344/github--v1.png#gh-dark-mode-only" alt="GitHub dark theme logo">
-    <img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo">
-    <img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo">
-    <img src="https://img.icons8.com/color/344/ms-powerpoint.png" alt="MS PowerPoint logo">
-    <img src="https://img.icons8.com/color/344/visual-studio-code-2019.png" alt="VS code logo">
+    <img src="https://img.icons8.com/color/344/figma--v1.png" alt="Figma logo" width=48px/>
+    <img src="https://img.icons8.com/ios/344/github--v1.png#gh-dark-mode-only" alt="GitHub dark theme logo" width=48px />
+    <img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width=48px />
+    <img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo" width=48px />
+    <img src="https://img.icons8.com/color/344/ms-powerpoint.png" alt="MS PowerPoint logo" width=48px />
+    <img src="https://img.icons8.com/color/344/visual-studio-code-2019.png" alt="VS code logo" width=48px />
 </p>
 
 ## ✅ Features
