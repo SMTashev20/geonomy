@@ -11,6 +11,7 @@ import { Position } from './components/Position';
 import { PositionCamera } from './components/PositionCamera';
 import { About } from './components/About';
 import { CoordinateScreen } from './components/CoordinateScreen';
+import { Information } from './components/Information';
 
 /**
  * mmmmmmmmmmm
@@ -22,7 +23,7 @@ function App() {
   
   return (
     <>
-      <Canvas style={{
+      {/* <Canvas style={{
         position: "absolute",
         top: "0px",
         bottom: "0px",
@@ -67,8 +68,8 @@ function App() {
             </Switch>
           </Router>
         </CountryDataContext.Provider>
-      </Canvas>
-      {/* <Information /> */}
+      </Canvas> */}
+      <Information country="United Kingdom" population={6927000} climate="Warm" wealth="Moderately wealthy" />
       {/* <About /> */}
     </>
   )

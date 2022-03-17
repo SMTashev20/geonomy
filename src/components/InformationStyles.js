@@ -2,22 +2,26 @@ import styled from 'styled-components';
 
 export const ParentSection = styled.section`
     height: 100vh;
-    width: 100vw;
     background-color: #0E0034;
+    overflow: hidden;
 `;
 
 export const DarkHeading = styled.div`
     position: absolute;
+    width: 100vw;
+    white-space: nowrap;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 20.5rem;
     color: #160643;
     user-select: none;
+    overflow: hidden;
 `;
 
 export const WhiteHeading = styled.div`
     position: absolute;
+    padding-bottom: 10vh;
     margin-left: 6vw;
     margin-top: 10vh;
     font-family: 'Inter';
@@ -26,10 +30,11 @@ export const WhiteHeading = styled.div`
     font-size: 14rem;
     line-height: 211px;
     color: #FFFFFF;
+    overflow: auto;
 `;
 
 export const Paragraph = styled.div`
-    height: 5vh;
+    height: 10vh;
     width: 50vw;
     display: inline-block;
     padding-top: 40vh;
@@ -72,16 +77,15 @@ export const Population = styled.div`
 `;
 
 export const PopulationText = styled.div`
-    position: absolute;
+    // position: absolute;
     margin-top: 1.5vh;
-    margin-left: 70px;
     display: inline-block;
     text-align: right;
 `;
 
 export const PopulationGradient = styled.span`
     disaply: inline-block;
-    background-image: linear-gradient(120deg, #49EB2E, #214DEC);
+    background-image: linear-gradient(100deg, #2EEBC9, #214DEC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;
