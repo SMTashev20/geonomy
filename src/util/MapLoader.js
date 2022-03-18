@@ -1,4 +1,4 @@
-import { BufferGeometry, Vector2, Vector3 } from "three";
+import { BufferGeometry, Vector2, Vector3, Line, MeshBasicMaterial } from "three";
 import { Loader } from "three";
 import { FileLoader } from "three/src/loaders/FileLoader";
 
@@ -57,9 +57,9 @@ export class MapLoader extends Loader {
 
     parseFeature(json) {
         if (json.geometry.type === 'Polygon')
-            return this.parsePolygon(json.geometry.coordinates);
+            return { properties: { ...json.properties }, geometry: [ this.parsePolygon(json.geometry.coordinates) ] };
         else if (json.geometry.type === 'MultiPolygon')
-            return this.parseMultiPolygon(json.geometry.coordinates);
+            return { properties: { ...json.properties }, geometry: this.parseMultiPolygon(json.geometry.coordinates) };
         else console.warn('[MapLoader]', json.geometry.type, 'type not yet implemented');
     }
 
@@ -75,7 +75,10 @@ export class MapLoader extends Loader {
             });
         });
 
-        return new BufferGeometry().setFromPoints(points);
+        return new Line(
+            new BufferGeometry().setFromPoints(points),
+            new MeshBasicMaterial({ color: 0xffffff })
+        );
     }
 
     parseMultiPolygon(json) {

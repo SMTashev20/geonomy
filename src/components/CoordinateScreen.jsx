@@ -9,8 +9,6 @@ export function CoordinateScreen({ ...props }) {
     const { data: countryData } = useContext(CountryDataContext);
 
     useEffect(() => {
-        const coords = params.coords.split(',');
-        console.log(coords);
         console.log(countryData);
     }, []);
 

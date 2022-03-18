@@ -23,7 +23,7 @@ function App() {
   
   return (
     <>
-      {/* <Canvas style={{
+      <Canvas style={{
         position: "absolute",
         top: "0px",
         bottom: "0px",
@@ -68,8 +68,7 @@ function App() {
             </Switch>
           </Router>
         </CountryDataContext.Provider>
-      </Canvas> */}
-      <Information country="United Kingdom" population={6927000} climate="Warm" wealth="Moderately wealthy" />
+      </Canvas>
       {/* <About /> */}
     </>
   )

@@ -1,6 +1,6 @@
-import { useFrame, useThree } from '@react-three/fiber';
+import { useThree } from '@react-three/fiber';
 import { useEffect, useRef, useState, useContext, forwardRef } from 'react';
-import { MapLoader, mapInt } from '../util/MapLoader';
+import { mapInt } from '../util/MapLoader';
 import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
@@ -21,6 +21,7 @@ const Globe = forwardRef((props, ref) => {
     const bufferTexture = useRef(new THREE.WebGLRenderTarget(8192, 4096));
     const bufferScene = useRef(new THREE.Scene());
     const bufferCamera = useRef(new THREE.PerspectiveCamera(70, 8192 / 4096, 1, 100000));
+    const countryRay = useRef();
     const [updateFrame, setUpdateFrame] = useState(false);
 
     const [location, setLocation] = useLocation();
@@ -35,27 +36,18 @@ const Globe = forwardRef((props, ref) => {
         bufferCamera.current.position.setZ(0);
 
         Promise.all([
-            new Promise((res, rej) => {
-                try {
-                    res(new MapLoader().parse(countryDataContext.data));
-                } catch (e) {
-                    rej(e);
-                }
-            }),
-            new THREE.TextureLoader().loadAsync(earthImg, console.log),
-            new THREE.TextureLoader().loadAsync(normalEarthImg, console.log)
+            countryDataContext.data,
+            new THREE.TextureLoader().loadAsync(earthImg),
+            new THREE.TextureLoader().loadAsync(normalEarthImg)
         ]).then(res => {
             const lineGroup = new THREE.Group();
             lineGroup.name = "CountryLines";
 
-            res[0].forEach(mesh => {
-                const line = new THREE.Line(
-                    mesh,
-                    new THREE.MeshBasicMaterial({ color: 0xffffff })
-                );
-
-                line.position.setZ(-2924); // - (2048 + 512 + 256 + 64 + 32 + 8 + 4)
-                lineGroup.add(line);
+            res[0].forEach(country => {
+                country.geometry.forEach(line => {
+                    line.position.setZ(-2924); // - (2048 + 512 + 256 + 64 + 32 + 8 + 4)
+                    bufferScene.current.add(line);
+                })
             })
 
             bufferScene.current.add(lineGroup);
@@ -66,6 +58,7 @@ const Globe = forwardRef((props, ref) => {
             )
 
             mesh.position.setZ(-2925); // - (2048 + 512 + 256 + 64 + 32 + 8 + 4 + 1)
+            mesh.renderOrder = -1;
             bufferScene.current.add(mesh);
 
             setUpdateFrame(true);
