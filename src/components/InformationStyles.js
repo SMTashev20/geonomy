@@ -141,3 +141,12 @@ export const ClimateGradient = styled.span`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;
+
+export const InformationBackButton = styled.button`
+    height: 5vh;
+    width: 5vh;
+    display: flex;
+    margin-top: 1.5vh;
+    margin-left: 1vw;
+    background: transparent;
+`;

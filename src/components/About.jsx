@@ -39,25 +39,25 @@ export function About() {
                 backdropFilter: "blur(15px)"
             }}>
                 <button style={{
-                width: "40px",
-                height: "40px",
-                position: "absolute",
-                backgroundColor: "transparent",
-                backgroundImage: `url('${ClosingButton}')`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                right: "37vw",
-                top: "1.5vh",
-                border: "none",
-                borderRadius: "100%",
+                    width: "40px",
+                    height: "40px",
+                    position: "absolute",
+                    backgroundColor: "transparent",
+                    backgroundImage: `url('${ClosingButton}')`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    right: "37vw",
+                    top: "1.5vh",
+                    border: "none",
+                    borderRadius: "100%",
                 }}>
                 </button>
                 <h3 style={{
-                textAlign: "center",
-                color: "white",
-                fontFamily: "Raleway, sans-serif",
-                fontSize: "90px",
-                fontWeight: "bold"
+                    textAlign: "center",
+                    color: "white",
+                    fontFamily: "Raleway, sans-serif",
+                    fontSize: "90px",
+                    fontWeight: "bold"
                 }}>
                 About us
                 </h3>

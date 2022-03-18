@@ -3,6 +3,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import { 
     ParentSection,
@@ -19,7 +20,8 @@ import {
     FinanceGradient,
     Climate,
     ClimateText,
-    ClimateGradient
+    ClimateGradient,
+    InformationBackButton
 } from './InformationStyles';
 
 function numberToWords(number) {
@@ -47,7 +49,7 @@ export function Information({ country, population, wealth, climate, ...props }) 
                 <Paragraph>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ratione similique corporis deleniti quidem quas in recusandae sit accusamus? Vitae soluta officia fugiat consequuntur repudiandae iusto libero ea laboriosam provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ratione similique corporis deleniti quidem quas in recusandae sit accusamus? Vitae soluta officia fugiat consequuntur repudiandae iusto libero ea laboriosam provident.
                 </Paragraph>
-                <Image></Image>
+                <Image />
                 <Statistics>
                     <Population>
                         <PersonIcon style={{ fontSize: 70 }}></PersonIcon>
@@ -57,12 +59,13 @@ export function Information({ country, population, wealth, climate, ...props }) 
                     </Population>
                     <Finance>
                         <AttachMoneyIcon style={{ fontSize: 70 }}></AttachMoneyIcon>
-                        <FinanceText>Very <FinanceGradient>{wealth}</FinanceGradient> area</FinanceText>
+                        <FinanceText><FinanceGradient>{wealth}</FinanceGradient> area</FinanceText>
                     </Finance>
                     <Climate>
                         <WhatshotIcon style={{ fontSize: 70 }}></WhatshotIcon>
                         <ClimateText><ClimateGradient>{climate}</ClimateGradient> climate</ClimateText>
                     </Climate>
+                        <ArrowBackIcon style={{ fontSize: 50, marginLeft: "0.5vw", color: "#C4C4C4", opacity: 1 }}/>
                 </Statistics>
             </ParentSection>
         </>
