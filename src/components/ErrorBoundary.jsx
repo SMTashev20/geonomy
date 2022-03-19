@@ -42,6 +42,11 @@ export class ErrorBoundary extends Component {
                                 <stop offset="1" stopColor="#1A0062" stopOpacity="0"/>
                             </radialGradient>
                         </defs>
+
+                        <text x="420" y="435" class="whoops">Whoops</text>
+                        <text x="460" y="500" class="text">Something went wrong...</text>
+                        <text x="350" y="650" class="text">something at line x happened</text>
+                        <text x="350" y="700" class="text">something else at line y also happened</text>
                     </svg>
                 </ParentErrorBoundary>
             );
