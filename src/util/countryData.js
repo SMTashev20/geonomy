@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MapLoader } from "./MapLoader";
+import { FileLoader } from "three";
 
 export function useCountryData(geoJsonUrl) {
     const [loading, setLoading] = useState(true);
@@ -8,14 +8,14 @@ export function useCountryData(geoJsonUrl) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        new MapLoader().loadAsync(
+        new FileLoader().loadAsync(
             geoJsonUrl,
             progress => {
                 setLoadingStatus(`${(progress.loaded / progress.total * 100).toFixed(2)}%`);
             },
         )
         .then(data => {
-            setData(data);
+            setData(JSON.parse(data));
             setLoading(false);
         })
         .catch(error => {

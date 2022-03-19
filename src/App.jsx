@@ -50,7 +50,7 @@ function App() {
             {loading ? null :
               <Globe
                 position={[0, 0, 0]}
-                scale={0.6}
+                scale={0.7}
                 ref={globeRef}
               />
             }
@@ -64,9 +64,9 @@ function App() {
               <Route path="/start">
                 <OrbitControls enablePan={false} minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
                 <Position refToPosition={globeRef} position={[0, 0, 0]} />
-                <Html as="div" fullscreen >
+                {/* <Html as="div" fullscreen >
                   <TakeMeThere />
-                </Html>
+                </Html> */}
               </Route>
               <Route path="/map/:coords">
                 <CoordinateScreen />
