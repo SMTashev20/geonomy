@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useThree } from '@react-three/fiber';
 
 export function Position({ refToPosition, position, rotation }) {
     useEffect(() => {

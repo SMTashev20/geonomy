@@ -15,7 +15,10 @@ export function useCountryData(geoJsonUrl) {
             },
         )
         .then(data => {
-            setData(JSON.parse(data));
+            data = JSON.parse(data);
+            setData(data);
+            if (data.type !== 'FeatureCollection')
+                throw new Error('Unparsable country data');
             setLoading(false);
         })
         .catch(error => {

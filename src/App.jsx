@@ -3,7 +3,7 @@ import { Globe } from './components/Globe';
 import { Html, OrbitControls, Stars } from '@react-three/drei';
 import CountryDataContext from './CountryDataContext';
 import { StartScreen } from './components/StartScreen';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Switch, Router, Route, useRoute } from "wouter"
 import { Rotate } from './components/Rotate';
 import { useCountryData } from './util/countryData';
@@ -19,10 +19,19 @@ import { TakeMeThere } from './components/TakeMeThere';
  * 
  */
 
+function PositionLightToCamera({ lightRef }) {
+  const { camera } = useThree();
+  useFrame(() => {
+    lightRef.current.position.set(camera.position.x, camera.position.y, camera.position.z)
+  })
+  return null;
+}
+
 function App() {
   const [loading, loadingStatus, error, data] = useCountryData('https://datahub.io/core/geo-countries/r/countries.geojson');
 
   const globeRef = useRef();
+  const lightRef = useRef();
   
   return (
     <>
@@ -35,9 +44,11 @@ function App() {
       }}>
         <color attach="background" args={["#0E0034"]} />
         <ambientLight color={"#240085"} />
-        <pointLight position={[8, 8, 8]} />
+        <pointLight ref={lightRef} position={[8, 8, 8]} />
         <Stars />
         
+        <PositionLightToCamera lightRef={lightRef} />
+
         <CountryDataContext.Provider
           value={{
             loading,
@@ -50,7 +61,7 @@ function App() {
             {loading ? null :
               <Globe
                 position={[0, 0, 0]}
-                scale={0.7}
+                scale={1}
                 ref={globeRef}
               />
             }
@@ -62,13 +73,15 @@ function App() {
                 <PositionCamera position={[0, 0, 5]} rotation={[0, 0, 0]} />
               </Route>
               <Route path="/start">
-                <OrbitControls enablePan={false} minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
+                <OrbitControls enablePan={false} minDistance={4.5} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
                 <Position refToPosition={globeRef} position={[0, 0, 0]} />
-                {/* <Html as="div" fullscreen >
-                  <TakeMeThere />
-                </Html> */}
+                <PositionCamera position={[0, 0, 5]} />
               </Route>
-              <Route path="/map/:coords">
+              <Route path="/map/:country">
+                <PositionCamera position={[0, 0, 0]} />
+                <TakeMeThere />
+              </Route>
+              <Route path="/map/:country/learn_more">
                 <CoordinateScreen />
               </Route>
             </Switch>

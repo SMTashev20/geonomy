@@ -31,14 +31,14 @@ const isPointInPolygon = (point, polygon) => {
         maxY = Math.max(point.y, maxY);
     });
 
-    if (point.x < minX || point.x > maxX || point.y < minY || point.y > maxY)
+    if (point.x <= minX || point.x >= maxX || point.y <= minY || point.y >= maxY)
         return false;
 
     let inside = false;
 
     for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-        if ((polygon[i][1] > point.y) != (polygon[j][1] > point.y) &&
-            point.x < (polygon[j][0] - polygon[i][0]) * (point.y - polygon[i][1]) / (polygon[j][1] - polygon[i][1]) + polygon[i][0])
+        if ((polygon[i][1] >= point.y) != (polygon[j][1] >= point.y) &&
+            point.x <= (polygon[j][0] - polygon[i][0]) * (point.y - polygon[i][1]) / (polygon[j][1] - polygon[i][1]) + polygon[i][0])
             inside = !inside;
     }
 
@@ -135,8 +135,8 @@ const Globe = forwardRef((props, ref) => {
         if (!dragged) {
             let countryMetadata = null;
             let coordinates = new THREE.Vector3(
-                Math.round(mapInt(e.uv.x, 0, 1, -180, 180)),
-                Math.round(mapInt(e.uv.y, 0, 1, -90, 90))
+                mapInt(e.uv.x, 0, 1, -180, 180),
+                mapInt(e.uv.y, 0, 1, -90, 90)
             );
 
             if (countryDataContext.data.type === 'FeatureCollection') {
@@ -161,8 +161,8 @@ const Globe = forwardRef((props, ref) => {
                     }
                 })
             }
-            if (matchStart) {
-                console.log(countryMetadata);
+
+            if (matchStart && countryMetadata) {
                 setLocation(`/map/${countryMetadata.properties.ADMIN}`)
             }
         }

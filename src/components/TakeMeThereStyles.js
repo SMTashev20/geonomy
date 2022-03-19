@@ -14,7 +14,6 @@ export const Separator = styled.hr`
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 `;
 
-
 export const Container = styled.div`
     height 30vh;
     width: 50vw;
@@ -30,7 +29,6 @@ export const LocationParent = styled.div`
 
 export const LocationHeading = styled.div`
     height: 1vh;
-    width: 0.25vw;
     margin-left: 1vw;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -40,7 +38,7 @@ export const LocationHeading = styled.div`
 `;
 
 export const LocationDescription = styled.div`
-    height: 5vh;
+    height: 14vh;
     width: 30vw;
     margin-top: 13vh;
     margin-left: 1vw;
@@ -49,6 +47,10 @@ export const LocationDescription = styled.div`
     font-family: 'Inter', sans-serif;
     font-style: normal;
     color: #FFFFFF;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 `;
 
 export const FindOutMoreButton = styled.button`

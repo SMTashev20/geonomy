@@ -5,8 +5,8 @@ import CountryDataContext from "../CountryDataContext";
 import { Information } from "./Information"
 
 export function CoordinateScreen({ ...props }) {
-    const [match, params] = useRoute('/map/:coords');
-    const { data: countryData } = useContext(CountryDataContext);
+    const [match, params] = useRoute('/map/:country/learn_more');
+    const countryDataContext = useContext(CountryDataContext);
 
     useEffect(() => {
         console.log(countryData);

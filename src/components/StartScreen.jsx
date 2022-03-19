@@ -21,13 +21,12 @@ export function StartScreen({ ...props }) {
     const [location, setLocation] = useLocation();
 
     return <Suspense fallback={null}>
-        <group position={[0, 0, 0]}>
+        <group position={[0, 0, 2]}>
             <Text
                 position={[0, 0, 0]}
                 color={'#8A4ADD'}
                 font={JosefinSansBoldFont}
                 fontSize={1}
-                onPointerMove={console.log}
             >
                 <meshBasicMaterial>
                     <GradientTexture stops={[0, 1]} colors={['#ffffff', '#8A4ADD']} size={100} />

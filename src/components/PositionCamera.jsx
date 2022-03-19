@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { useThree } from "@react-three/fiber";
+import { Vector3 } from "three";
 
 export function PositionCamera({ position, rotation }) {
     const { camera } = useThree();
+
     useEffect(() => {
+        console.log('mount');
         if (camera === undefined) return;
 
         if (position) {
@@ -17,7 +20,13 @@ export function PositionCamera({ position, rotation }) {
             camera.rotation.y = rotation[1];
             camera.rotation.z = rotation[2];
         }
-    })
+
+        return () => {
+            camera.position.x = 0;
+            camera.position.y = 0;
+            camera.position.z = -3;
+        }
+    }, [])
 
     return null;
 }
