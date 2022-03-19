@@ -13,6 +13,7 @@ import { About } from './components/About';
 import { CoordinateScreen } from './components/CoordinateScreen';
 import { Information } from './components/Information';
 import { TakeMeThere } from './components/TakeMeThere';
+import { NotRoute } from './components/NotRoute';
 
 /**
  * mmmmmmmmmmm
@@ -65,6 +66,12 @@ function App() {
                 ref={globeRef}
               />
             }
+
+            <NotRoute path="/">
+              {loading ?
+                <Html fullscreen><h1 style={{position: "absolute", color: "white", bottom: "10px", right: "10px", fontFamily: "'Raleway'"}}>{loadingStatus}</h1></Html> : null}
+            </NotRoute>
+
             <Switch>
               <Route path="/">
                 <StartScreen />
