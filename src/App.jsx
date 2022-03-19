@@ -12,10 +12,13 @@ import { PositionCamera } from './components/PositionCamera';
 import { About } from './components/About';
 import { CoordinateScreen } from './components/CoordinateScreen';
 import { Information } from './components/Information';
+import { TakeMeThere } from './components/TakeMeThere';
 
 /**
  * mmmmmmmmmmm
+ * 
  */
+
 function App() {
   const [loading, loadingStatus, error, data] = useCountryData('https://datahub.io/core/geo-countries/r/countries.geojson');
 
@@ -61,6 +64,9 @@ function App() {
               <Route path="/start">
                 <OrbitControls enablePan={false} minDistance={3} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
                 <Position refToPosition={globeRef} position={[0, 0, 0]} />
+                <Html as="div" fullscreen >
+                  <TakeMeThere />
+                </Html>
               </Route>
               <Route path="/map/:coords">
                 <CoordinateScreen />
