@@ -24,7 +24,7 @@
     <img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width=48px />
     <img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo" width=48px />
     <img src="https://img.icons8.com/color/344/ms-powerpoint.png" alt="MS PowerPoint logo" width=48px />
-    <img src="https://img.icons8.com/color/344/adobe-creative-cloud--v1.png" alt="adobe creative cloud" width=48px />
+    <img src="https://www.adobe.com/content/dam/shared/images/product-icons/svg/creative-cloud.svg" alt="adobe creative cloud" width=48px />
     <img src="https://media.discordapp.net/attachments/915570532504703086/954703245484380250/9gI1IJAqeUWtrzE-64qgypUtxNI4hIDj-OjlQM5Zl3T_6BZeNb_huRfa57DdVxQHLWg.png" alt"concept" width=48px />
 </p>
 
