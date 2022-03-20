@@ -107,6 +107,7 @@ function App() {
               {/* Information page - The globe is hidden from the user & all of the Information screen assets are shown. */}
               <Route path="/map/:country/learn_more">
                 <CoordinateScreen />
+                <PositionCamera rotation={[0, 0, 0]} position={[0, 0, 5]} />
               </Route>
             </Switch>
           </Router>

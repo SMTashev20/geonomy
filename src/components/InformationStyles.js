@@ -34,17 +34,20 @@ export const WhiteHeading = styled.div`
 `;
 
 export const Paragraph = styled.div`
-    height: 10vh;
+    height: 28vh;
     width: 50vw;
     display: inline-block;
-    padding-top: 40vh;
-    padding-left: 6.7vw;
+    margin-top: 37vh;
+    margin-left: 6.7vw;
+    padding: 0;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 28.9843px;
     line-height: 35px;
     color: #FFFFFF;
+    overflow: scroll;
+    overflow-x: hidden;
 `;
 
 export const Image = styled.div`
