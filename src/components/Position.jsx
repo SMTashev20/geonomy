@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useThree } from '@react-three/fiber';
 
+// Component that positions objects when mounted.
 export function Position({ refToPosition, position, rotation }) {
     useEffect(() => {
         if (refToPosition.current === undefined) return;

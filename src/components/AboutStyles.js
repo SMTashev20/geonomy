@@ -1,3 +1,4 @@
+// Importing the "styled" property from the styled components dependancy, which is meant to create the styling.
 import styled from 'styled-components';
 
 // export const InformationButton = styled.button`
@@ -30,6 +31,7 @@ import styled from 'styled-components';
 //     fontWeight: "bold";
 // `;
 
+// Exoprting a styled div as a styled component to be used in About.jsx as an already designed out element.
 export const Card = styled.div`
     width: 35vw;
     height: 19.5vh;
@@ -42,6 +44,7 @@ export const Card = styled.div`
     filter: drop-shadow(0px 16px 21px rgba(0, 0, 0, 1));
 `;
 
+// Styling for our CSS Grid skeleton.
 export const GridContainer = styled.div`
     padding: 10px;
     display: grid;
@@ -49,6 +52,7 @@ export const GridContainer = styled.div`
     gap: 10px;
 `;
 
+// Styling for the used images in the cards.
 export const CardPictureContainer = styled.div`
     width: 7.5vw;
     height: 15vh;
@@ -62,6 +66,7 @@ export const CardPictureContainer = styled.div`
     border-radius: 100%;
 `;
 
+// Styling for the team members' name hadings.
 export const CardName = styled.div`
     width: 400px;
     padding: 20px 0;
@@ -74,6 +79,7 @@ export const CardName = styled.div`
     font-weight: 700;
 `;
 
+// Styling for the team members' descriptions.
 export const CardDescription = styled.div`
     grid-row: 2 / span 3;
     grid-column: 2 / span 5;

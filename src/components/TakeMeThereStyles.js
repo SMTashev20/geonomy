@@ -1,10 +1,13 @@
+// Importing the "styled" property from the styled components dependancy, which is meant to create the styling.
 import styled from 'styled-components';
 
+// Styling for the parent section.
 export const TemporarySection = styled.section`
     height: 100vh;
     width: 100vw;
 `;
 
+// Styling for the vertical linear gradient sidebar.
 export const Separator = styled.hr`
     height: inherit;
     width: 0.55vw;
@@ -14,6 +17,7 @@ export const Separator = styled.hr`
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 `;
 
+// Styling for our HTML parent container, which is used to set some basic poitioning for its children elements.
 export const Container = styled.div`
     height 30vh;
     width: 50vw;
@@ -22,11 +26,13 @@ export const Container = styled.div`
     margin-left: 12vw;
 `;
 
+// Styling for LocationHeading & Location Description's parent element, meant to structure them using CSS Grid.
 export const LocationParent = styled.div`
     display: flex;
     flex-direction: column;
 `;
 
+// Styling for the user's chosen county's name, which will is displayed as a heading.
 export const LocationHeading = styled.div`
     height: 1vh;
     margin-left: 1vw;
@@ -37,6 +43,7 @@ export const LocationHeading = styled.div`
     color: #FFFFFF;
 `;
 
+// Styling for the users' chosen country's description, gathered from an API.
 export const LocationDescription = styled.div`
     height: 14vh;
     width: 30vw;
@@ -53,6 +60,7 @@ export const LocationDescription = styled.div`
     overflow: hidden;
 `;
 
+// Styling for a neumorphic-esc button, meant to take the user to the Information page.
 export const FindOutMoreButton = styled.button`
     width: 18vw;
     height: 8vh;

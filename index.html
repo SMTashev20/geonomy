@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Setting up some basic meta and link tags. -->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./img/html-assets/icons/logo-Dark.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,14 +9,19 @@
     <title>Geonomy</title>
   </head>
   <body>
+    <!-- Setting up the root element & a script tag that are used to display the App. -->
     <div id="root"></div>
     <script type="module" src="./src/main.jsx"></script>
+
+    <!-- If the user has JavaScript disabled, a noscript page, whose purpose is to provoke the user to enable it gets displayed. -->
     <noscript>
       <div class="content">
+        <!-- A highly-confidential image, whose purpose is to visualize what has happened gets loaded. -->
         <div class="img-container">
             <img src = "./img/html-assets/no-script/noJS-logo.png">
         </div>
 
+        <!-- A paragraph is loaded to clarify what has happened. -->
         <div class="text-container">
             <p>
                 It appears that you have blocked your brower from 
@@ -23,6 +29,7 @@
                 Please follow this quick guide and reload the page:
             </p>
 
+        <!-- A link to a guide explaining how to enable JavaScript is displayed. -->
             <p id="enable-link">
                 <a  href = "https://www.enable-javascript.com/">https://www.enable-javascript.com/</a>
             </p>

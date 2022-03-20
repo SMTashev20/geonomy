@@ -1,3 +1,4 @@
+// Importing the "styled" property from the styled components dependancy, which is meant to create the styling.
 import styled from 'styled-components';
 
 export const TempSection = styled.section`

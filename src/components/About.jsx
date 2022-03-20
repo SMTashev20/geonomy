@@ -1,3 +1,4 @@
+// Importing various images & styled components to be used later on in the About section.
 import InformationCard from '../../img/html-assets/icons/info.png';
 import ClosingButton from '../../img/html-assets/icons/close.png';
 import AlexImg from '../../img/html-assets/about/alex.jpg'
@@ -14,6 +15,7 @@ import {
 export function About() {
     return (
         <>
+            {/* Styling for the Toggle Open button. */}
             <button style={{
                 width: "40px",
                 height: "40px",
@@ -28,6 +30,8 @@ export function About() {
                 borderRadius: "100%",
             }}>
             </button>
+
+            {/* Styling for the About section. */}
             <section style={{
                 width: "40vw",
                 height: "100vh",
@@ -38,6 +42,8 @@ export function About() {
                 boxSizing: "border-box",
                 backdropFilter: "blur(15px)"
             }}>
+
+                {/* Styling for the Toggle Close button. */}
                 <button style={{
                     width: "40px",
                     height: "40px",
@@ -52,6 +58,8 @@ export function About() {
                     borderRadius: "100%",
                 }}>
                 </button>
+
+                {/* Displaying the "About us" heading */}
                 <h3 style={{
                     textAlign: "center",
                     color: "white",
@@ -59,55 +67,75 @@ export function About() {
                     fontSize: "90px",
                     fontWeight: "bold"
                 }}>
-                About us
+                    About us
                 </h3>
                 
+                {/* Styling for every individual card. */}
                 <Card>
-                <GridContainer>
-                    <CardPictureContainer style={{ backgroundImage: `url(${ AlexImg })` }}></CardPictureContainer>
-        
-                    <CardName>Alexander Manov</CardName>
-        
-                    <CardDescription>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    </CardDescription>
-                </GridContainer>
+                    {/* Parent element, meant to structure everything using CSS Grid. */}
+                    <GridContainer>
+                        {/* Every team member's photo gets displayed. */}
+                        <CardPictureContainer style={{ backgroundImage: `url(${ AlexImg })` }}></CardPictureContainer>
+            
+                        {/* Displaying the team member's name. */}
+                        <CardName>Alexander Manov</CardName>
+
+                        {/* Describing the team member. */}
+                        <CardDescription>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </CardDescription>
+                    </GridContainer>
                 </Card>
         
+                {/* Styling for every individual card. */}
                 <Card>
-                <GridContainer>
-                    <CardPictureContainer style={{ backgroundImage: `url(${ ValueImg })` }}></CardPictureContainer>
-        
-                    <CardName>Valeri Ivanov</CardName>
-        
-                    <CardDescription>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    </CardDescription>
-                </GridContainer>
+                    {/* Parent element, meant to structure everything using CSS Grid. */}
+                    <GridContainer>
+                        {/* Every team member's photo gets displayed. */}
+                        <CardPictureContainer style={{ backgroundImage: `url(${ ValueImg })` }}></CardPictureContainer>
+            
+                        {/* Displaying the team member's name. */}
+                        <CardName>Valeri Ivanov</CardName>
+
+                        {/* Describing the team member. */}
+                        <CardDescription>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </CardDescription>
+                    </GridContainer>
                 </Card>
         
+                {/* Styling for every individual card. */}
                 <Card>
-                <GridContainer>
-                    <CardPictureContainer style={{ backgroundImage: `url(${ StaniImg })` }}></CardPictureContainer>
-        
-                    <CardName>Stanislav Tashev</CardName>
-        
-                    <CardDescription>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    </CardDescription>
-                </GridContainer>
+                    {/* Parent element, meant to structure everything using CSS Grid. */}
+                    <GridContainer>
+                        {/* Every team member's photo gets displayed. */}
+                        <CardPictureContainer style={{ backgroundImage: `url(${ StaniImg })` }}></CardPictureContainer>
+
+                        {/* Displaying the team member's name. */}
+                        <CardName>Stanislav Tashev</CardName>
+
+                        {/* Describing the team member. */}
+                        <CardDescription>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </CardDescription>
+                    </GridContainer>
                 </Card>
-        
+                
+                {/* Styling for every individual card. */}
                 <Card>
-                <GridContainer>
-                    <CardPictureContainer style={{ backgroundImage: `url(${ MishoImg })` }}></CardPictureContainer>
-        
-                    <CardName>Mihail Petrov</CardName>
-        
-                    <CardDescription>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    </CardDescription>
-                </GridContainer>
+                    {/* Parent element, meant to structure everything using CSS Grid. */}
+                    <GridContainer>
+                        {/* Every team member's photo gets displayed. */}
+                        <CardPictureContainer style={{ backgroundImage: `url(${ MishoImg })` }}></CardPictureContainer>
+                        
+                        {/* Displaying the team member's name. */}
+                        <CardName>Mihail Petrov</CardName>
+
+                        {/* Describing the team member. */}
+                        <CardDescription>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </CardDescription>
+                    </GridContainer>
                 </Card>
             </section>
           </>
