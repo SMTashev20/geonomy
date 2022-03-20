@@ -4,7 +4,7 @@ import { MapLoader, mapInt } from '../util/MapLoader';
 import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
-import earthImg from '../../img/map-light.png';
+import earthImg from '../../img/map-light.jpg';
 import { useLocation } from 'wouter';
 import { useRoute } from 'wouter';
 
