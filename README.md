@@ -30,13 +30,13 @@
 
 ### Used technologies for the site development 
 <p align="left">
-    <img src="https://img.icons8.com/color/344/visual-studio-code-2019.png" alt="VS code logo" width=48px />
-    <img src="https://img.icons8.com/color/344/html-5--v1.png" alt="html5" width=48px />
-    <img src="https://img.icons8.com/color/344/css3.png" alt="css" width=48px />
-    <img src="https://img.icons8.com/color/344/javascript--v1.png" alt="JavaScript" width=48px />
-    <img src="https://img.icons8.com/color/344/react-native.png" alt="react" width=48px />
-    <img src="https://vitejs.dev/logo.svg" alt="vite" width=48px />
-    <img src="https://aws1.discourse-cdn.com/standard17/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" alt="three js" width=48px />
+    <a href="https://code.visualstudio.com/"><img src="https://img.icons8.com/color/344/visual-studio-code-2019.png" alt="VS code logo" width=48px /></a>
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"><img src="https://img.icons8.com/color/344/html-5--v1.png" alt="html5" width=48px /></a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.icons8.com/color/344/css3.png" alt="css" width=48px /></a>
+    <a href="https://javascript.info/"><img src="https://img.icons8.com/color/344/javascript--v1.png" alt="JavaScript" width=48px /></a>
+    <a href="https://reactjs.org/docs/getting-started.html"><img src="https://img.icons8.com/color/344/react-native.png" alt="react" width=48px /></a>
+    <a href="https://vitejs.dev/"><img src="https://vitejs.dev/logo.svg" alt="vite" width=48px /></a>
+    <a href="https://threejs.org/"><img src="https://aws1.discourse-cdn.com/standard17/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" alt="three js" width=48px /></a>
 </p>
 
 ## 📄 Documents
