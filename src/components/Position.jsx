@@ -17,6 +17,12 @@ export function Position({ refToPosition, position, rotation }) {
             refToPosition.current.rotation.y = rotation[1];
             refToPosition.current.rotation.z = rotation[2];
         }
+
+        return () => {
+            refToPosition.current.rotation.x = 0;
+            refToPosition.current.rotation.y = 0;
+            refToPosition.current.rotation.z = 0;
+        }
     })
 
     return null;

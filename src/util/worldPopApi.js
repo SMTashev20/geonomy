@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const NINJA_ENDPOINT = 'https://worldpop-api-passthrough.herokuapp.com';
+const NINJA_ENDPOINT = 'https://geonomy.herokuapp.com';
 
 export function useCountryStats(countryName) {
     const [loading, setLoading] = useState(true);

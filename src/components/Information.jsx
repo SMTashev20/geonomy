@@ -26,6 +26,7 @@ import {
 import { useState, useEffect, useContext } from 'react';
 import { fetchCountryDesc, fetchCountryImage } from '../util/wikipediaApi';
 import { useCountryStats } from '../util/worldPopApi';
+import { useLocation } from 'wouter';
 
 function numberToWords(number) {
     const words = {
@@ -57,6 +58,7 @@ export function Information({ country, countryData, ...props }) {
     const [statsLoading, statsError, stats] = useCountryStats(countryData.properties.ADMIN)
     const [imageLoading, setImageLoading] = useState(true);
     const [imageURL, setImageURL] = useState(null);
+    const [location, setLocation] = useLocation();
 
     useEffect(() => {
         let isMounted = true;
@@ -128,7 +130,7 @@ export function Information({ country, countryData, ...props }) {
                             "" : [' USD (GDP)', ' is the region', '% (unemployment)', ' CO2e (emissions)', ' is the capital'][randomNumber]}
                     </ClimateText>
                 </Climate>
-                    <ArrowBackIcon style={{ fontSize: 50, marginLeft: "0.5vw", color: "#C4C4C4", opacity: 1 }}/>
+                    <ArrowBackIcon onClick={() => setLocation('/start')} style={{ fontSize: 50, position: "absolute", bottom: "30px", left: "30px", color: "#C4C4C4" }}/>
             </Statistics>
         </ParentSection>
     )

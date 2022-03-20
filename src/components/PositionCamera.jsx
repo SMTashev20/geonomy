@@ -21,15 +21,15 @@ export function PositionCamera({ position, rotation }) {
             camera.rotation.z = rotation[2];
         }
 
-        return () => {
-            camera.position.x = 0;
-            camera.position.y = 0;
-            camera.position.z = -3;
+        // return () => {
+        //     camera.position.x = 0;
+        //     camera.position.y = 0;
+        //     camera.position.z = -3;
 
-            camera.rotation.x = 0;
-            camera.rotation.y = 0;
-            camera.rotation.z = 0;
-        }
+        //     camera.rotation.x = 0;
+        //     camera.rotation.y = 0;
+        //     camera.rotation.z = 0;
+        // }
     }, [])
 
     return null;

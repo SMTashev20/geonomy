@@ -30,6 +30,12 @@ function PositionLightToCamera({ lightRef }) {
   return null;
 }
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.random() * (max - min) + min;
+}
+
 // The App() function acts as a main function. The entirety of the website's pages are based on this function.
 function App() {
   const [loading, loadingStatus, error, data] = useCountryData('https://datahub.io/core/geo-countries/r/countries.geojson');
@@ -81,7 +87,7 @@ function App() {
             {/* Displaying the loading status. */}
             <NotRoute path="/">
               {loading ?
-                <Html fullscreen><h1 style={{position: "absolute", color: "white", bottom: "10px", right: "10px", fontFamily: "'Raleway'"}}>{loadingStatus}</h1></Html> : null}
+                <Html fullscreen><h1 style={{position: "absolute", fontSize: "70px", color: "white", bottom: "10px", right: "10px", fontFamily: "'Raleway'"}}>{loadingStatus}</h1></Html> : null}
             </NotRoute>
             
             {/* Parent element for the country's population. */}
@@ -101,19 +107,19 @@ function App() {
               </Route>
               {/* Take me there page - Orbit Controls are now locked again & the Take Me There assets are loaded. */}
               <Route path="/map/:country">
-                <PositionCamera position={[0, 0, 0]} />
                 <TakeMeThere />
+                <PositionCamera position={[0, 0, 0]} rotation={[0, 0, 0]} />
+                <Position refToPosition={globeRef} position={[4, 0, -3]} rotation={[getRandomInt(0, 6), getRandomInt(0, 6), 0]} />
               </Route>
               {/* Information page - The globe is hidden from the user & all of the Information screen assets are shown. */}
               <Route path="/map/:country/learn_more">
-                <CoordinateScreen />
                 <PositionCamera rotation={[0, 0, 0]} position={[0, 0, 5]} />
+                <CoordinateScreen />
               </Route>
             </Switch>
           </Router>
         </CountryDataContext.Provider>
       </Canvas>
-      {/* <About /> */}
     </>
   )
 
