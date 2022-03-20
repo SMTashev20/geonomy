@@ -19,13 +19,13 @@
 ## 🗂️ Used technologies
 ### Used technologies about the visual elements, docs and the communication
 <p align="left">
-    <img src="https://img.icons8.com/color/344/figma--v1.png" alt="Figma logo" width=48px/>
-    <img src="https://img.icons8.com/ios/344/github--v1.png#gh-dark-mode-only" alt="GitHub dark theme logo" width=48px />
-    <img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width=48px />
-    <img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo" width=48px />
-    <img src="https://img.icons8.com/color/344/ms-powerpoint.png" alt="MS PowerPoint logo" width=48px />
-    <img src="https://www.adobe.com/content/dam/shared/images/product-icons/svg/creative-cloud.svg" alt="adobe creative cloud" width=48px />
-    <img src="https://media.discordapp.net/attachments/915570532504703086/954703245484380250/9gI1IJAqeUWtrzE-64qgypUtxNI4hIDj-OjlQM5Zl3T_6BZeNb_huRfa57DdVxQHLWg.png" alt"concept" width=48px />
+    <a href="https://www.figma.com/"><img src="https://img.icons8.com/color/344/figma--v1.png" alt="Figma logo" width=48px/></a>
+    <a href="https://github.com/"><img src="https://img.icons8.com/ios/344/github--v1.png#gh-dark-mode-only" alt="GitHub dark theme logo" width=48px /></a>
+    <a href="https://www.microsoft.com/en-ww/microsoft-teams/log-in"><img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width=48px /></a>
+    <a href="https://www.microsoft.com/en-ww/microsoft-365/free-office-online-for-the-web"><img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo" width=48px /></a>
+    <a href="https://www.microsoft.com/en-ww/microsoft-365/free-office-online-for-the-web"><img src="https://img.icons8.com/color/344/ms-powerpoint.png" alt="MS PowerPoint logo" width=48px /></a>
+    <a href="https://www.adobe.com/creativecloud.html"><img src="https://www.adobe.com/content/dam/shared/images/product-icons/svg/creative-cloud.svg" alt="adobe creative cloud" width=48px /></a>
+    <a href="https://concepts.app/en/"><img src="https://media.discordapp.net/attachments/915570532504703086/954703245484380250/9gI1IJAqeUWtrzE-64qgypUtxNI4hIDj-OjlQM5Zl3T_6BZeNb_huRfa57DdVxQHLWg.png" alt"concept" width=48px /></a>
 </p>
 
 ### Used technologies for the site development 
