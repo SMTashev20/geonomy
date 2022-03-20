@@ -49,6 +49,19 @@ export const Paragraph = styled.div`
     color: #FFFFFF;
     overflow: scroll;
     overflow-x: hidden;
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(179.99deg, #180550 75.74%, rgba(24, 5, 80, 0) 112.02%);
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #2F0A7E;
+        border-radius: 10px;
+    }
 `;
 
 export const Image = styled.div`
