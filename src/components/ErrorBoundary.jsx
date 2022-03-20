@@ -2,6 +2,7 @@
 import { Component } from "react";
 import { 
     ParentErrorBoundary,
+    DescriptionContainer,
     Whoops,
     Description,
     Astronaut
@@ -28,11 +29,8 @@ export class ErrorBoundary extends Component {
             return (
                 // Parent skeleton for our SVG.
                 <ParentErrorBoundary>
-                    <Whoops>Whoops...</Whoops>
-                    <Description><code>{this.state.error.toString()}</code></Description>
-                    <Description><code>{this.state.stack.componentStack}</code></Description>
 
-                    <svg width="920" height="920" viewBox="0 0 1255 1255" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1220" height="1220" viewBox="0 0 1255 1255" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: "20vw" }}>
                         <circle cx="627.288" cy="627.288" r="627.288" fill="url(#paint0_radial_540_27)" fillOpacity="0.86"/>
                         <circle cx="627.288" cy="626.822" r="415.534" stroke="white" strokeWidth="5" strokeDasharray="10 10"/>
                         
@@ -44,12 +42,14 @@ export class ErrorBoundary extends Component {
                                 <stop offset="1" stopColor="#1A0062" stopOpacity="0"/>
                             </radialGradient>
                         </defs>
-
-                        <text x="420" y="435" class="whoops">Whoops</text>
-                        <text x="460" y="500" class="text">Something went wrong...</text>
-                        <text x="350" y="650" class="text">something at line x happened</text>
-                        <text x="350" y="700" class="text">something else at line y also happened</text>
                     </svg>
+
+                    <DescriptionContainer>
+                        <Whoops>Whoops...</Whoops>
+                        <Description style={{ marginTop: "2vh" }}><code>{this.state.error.toString()}</code></Description>
+                        <Description style={{ marginTop: "1vh" }}><code>{this.state.stack.componentStack}</code></Description>
+                    </DescriptionContainer>
+
                 </ParentErrorBoundary>
             );
         } else {

@@ -10,6 +10,25 @@ export const ParentErrorBoundary = styled.section`
     flex-direction: column;
 `;
 
+export const SVGParent = styled.div`
+    height: 100vh;
+    width: 100vw;
+    dispaly: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: center;
+`;
+
+export const DescriptionContainer = styled.div`
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+`;
+
 // Styling for some linear gradient text, meant to indicate that an error has occurred.
 export const Whoops = styled.div`
     background-image: linear-gradient(180deg, #FF2B91 26.02%, rgba(255, 48, 48, 0) 100%);
@@ -18,18 +37,21 @@ export const Whoops = styled.div`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    position: absolute;
     font: 6rem "Raleway", sans-serif;
     fill: #EC22CF;
     font-weight: 700;
+    vertical-align: middle;
 `;
 
 // Styling for the element that handles the exact error message.
 export const Description = styled.div`
-    font: 1.8rem "Roboto", sans-serif;
+    font: 1rem "Roboto", sans-serif;
     color: #FFFFFF;
     fill: white;
     font-weight: 500;
+    vertical-align: middle;
+    margin-left: 35vw;
+    width: 30vw;
 `;
 
 // Styling for an image, meant to improve UX.
