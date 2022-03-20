@@ -1,19 +1,20 @@
 // Importing the "styled" property from the styled components dependancy, which is meant to create the styling.
 import styled from 'styled-components';
+import InfoButton from '../../img/html-assets/icons/info.png';
 
-// export const InformationButton = styled.button`
-//     width: "40px";
-//     height: "40px";
-//     position: "absolute";
-//     backgroundColor: "transparent";
-//     backgroundImage: url(../img/html-assets/icons/information/info.png);
-//     backgroundRepeat: "no-repeat";
-//     backgroundPosition: "center";
-//     right: "2vw";
-//     bottom: "3vh";
-//     border: "none";
-//     borderRadius: "100%";
-// `;
+export const InformationButton = styled.button`
+    width: "40px";
+    height: "40px";
+    position: "absolute";
+    backgroundColor: "transparent";
+    backgroundImage: url(${InfoButton});
+    backgroundRepeat: "no-repeat";
+    backgroundPosition: "center";
+    right: "2vw";
+    bottom: "3vh";
+    border: "none";
+    borderRadius: "100%";
+`;
 
 // export const Parent = styled.section`
 //     textAlign: "center";

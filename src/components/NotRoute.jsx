@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useRoute } from "wouter";
 
 // Check whether the current path is a route.

@@ -5,7 +5,6 @@ import CountryDataContext from '../CountryDataContext';
 import * as THREE from 'three';
 
 import earthImg from '../../img/map-light.png';
-import normalEarthImg from '../../img/normal.png';
 import { useLocation } from 'wouter';
 import { useRoute } from 'wouter';
 
@@ -57,7 +56,6 @@ const Globe = forwardRef((props, ref) => {
     const bufferTexture = useRef(new THREE.WebGLRenderTarget(PROJECTION_TEXTURE_RESOLUTION.x, PROJECTION_TEXTURE_RESOLUTION.y));
     const bufferScene = useRef(new THREE.Scene());
     const bufferCamera = useRef(new THREE.PerspectiveCamera(70, PROJECTION_TEXTURE_RESOLUTION.x / PROJECTION_TEXTURE_RESOLUTION.y, 1, 100000));
-    const countryRay = useRef();
     const [updateFrame, setUpdateFrame] = useState(false);
 
     const [location, setLocation] = useLocation();
@@ -71,8 +69,6 @@ const Globe = forwardRef((props, ref) => {
         bufferScene.current.background = new THREE.Color('#000000');
         bufferCamera.current.position.setZ(0);
 
-        countryRay.current = new THREE.Ray(COUNTRY_LINE_POSITION, new THREE.Vector3(0, 1, 0));
-
         Promise.all([
             new Promise((res, rej) => {
                 try {
@@ -82,7 +78,6 @@ const Globe = forwardRef((props, ref) => {
                 }
             }),
             new THREE.TextureLoader().loadAsync(earthImg),
-            new THREE.TextureLoader().loadAsync(normalEarthImg)
         ]).then(res => {
             const lineGroup = new THREE.Group();
             lineGroup.name = "CountryLines";
@@ -101,7 +96,7 @@ const Globe = forwardRef((props, ref) => {
 
             const mesh = new THREE.Mesh(
                 new THREE.BoxGeometry(res[1].image.width, res[1].image.height, 1),
-                new THREE.MeshStandardMaterial({ map: res[1], normalMap: res[2] })
+                new THREE.MeshStandardMaterial({ map: res[1] })
             )
 
             mesh.position.setZ(MAP_IMAGE_POSITION.z);

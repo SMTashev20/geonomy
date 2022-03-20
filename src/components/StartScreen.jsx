@@ -1,4 +1,4 @@
-import { forwardRef, Suspense, useContext, useState, useEffect } from "react";
+import { forwardRef, Suspense, useContext, useState } from "react";
 import { Text, GradientTexture } from "@react-three/drei";
 import CountryDataContext from '../CountryDataContext';
 
