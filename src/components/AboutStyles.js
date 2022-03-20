@@ -90,6 +90,6 @@ export const CardDescription = styled.div`
     font-family: 'Roboto';
     font-size: 18px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     color: #C4C4C4;
 `;

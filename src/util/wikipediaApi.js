@@ -6,7 +6,11 @@ export async function fetchCountryDesc(country) {
         .then(val => {
             let pageKeys = Object.keys(val.query.pages);
             if (pageKeys[0] === '-1') throw new Error("Country wasn't found");
-            else return val.query.pages[pageKeys[0]].extract;
+            else {
+                if (!val.query.pages[pageKeys[0]].extract)
+                    return 'Wikipedia did not provide information summary about this country :(';
+                else return val.query.pages[pageKeys[0]].extract;
+            }
         })
 }
 

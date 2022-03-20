@@ -12,7 +12,6 @@ import { Position } from './components/Position';
 import { PositionCamera } from './components/PositionCamera';
 import { About } from './components/About';
 import { CoordinateScreen } from './components/CoordinateScreen';
-import { Information } from './components/Information';
 import { TakeMeThere } from './components/TakeMeThere';
 import { NotRoute } from './components/NotRoute';
 
@@ -46,80 +45,81 @@ function App() {
   return (
     /* Styling for the main page. */
     <>
-      {/* The canvas element is our entire website's base. */}
-      <Canvas style={{
-        position: "absolute",
-        top: "0px",
-        bottom: "0px",
-        width: "100%",
-        height: "100%"
-      }}>
-        {/* Initializing the scene's background color. */}
-        <color attach="background" args={["#0E0034"]} />
-        {/* Initializing the scene's lighting (ambient & point). */}
-        <ambientLight color={"#240085"} />
-        <pointLight ref={lightRef} position={[8, 8, 8]} />
-        {/* Use react-three-drei's stars property to generate our shining background stars. */}
-        <Stars />
-        
-        {/* Callign the PositionLightToCamera function as a component. */}
-        <PositionLightToCamera lightRef={lightRef} />
+      <Router>
+        {/* The canvas element is our entire website's base. */}
+        <Canvas style={{
+          position: "absolute",
+          top: "0px",
+          bottom: "0px",
+          width: "100%",
+          height: "100%"
+        }}>
+          {/* Initializing the scene's background color. */}
+          <color attach="background" args={["#0E0034"]} />
+          {/* Initializing the scene's lighting (ambient & point). */}
+          <ambientLight color={"#240085"} />
+          <pointLight ref={lightRef} position={[8, 8, 8]} />
+          {/* Use react-three-drei's stars property to generate our shining background stars. */}
+          <Stars />
+          
+          {/* Callign the PositionLightToCamera function as a component. */}
+          <PositionLightToCamera lightRef={lightRef} />
 
-        <CountryDataContext.Provider
-          value={{
-            loading,
-            loadingStatus,
-            error,
-            data
-          }}
-        >
+          <CountryDataContext.Provider
+            value={{
+              loading,
+              loadingStatus,
+              error,
+              data
+            }}
+          >
 
-          {/* Resetting the globe's position throught our router. */}
-          <Router>
-            {loading ? null :
-              <Globe
-                position={[0, 0, 0]}
-                scale={1}
-                ref={globeRef}
-              />
-            }
+            {/* Resetting the globe's position throught our router. */}
+              {loading ? null :
+                <Globe
+                  position={[0, 0, 0]}
+                  scale={1}
+                  ref={globeRef}
+                />
+              }
 
-            {/* Displaying the loading status. */}
-            <NotRoute path="/">
-              {loading ?
-                <Html fullscreen><h1 style={{position: "absolute", fontSize: "70px", color: "white", bottom: "10px", right: "10px", fontFamily: "'Raleway'"}}>{loadingStatus}</h1></Html> : null}
-            </NotRoute>
-            
-            {/* Parent element for the country's population. */}
-            <Switch>
-              {/* Main page - Orbit Contols are locked, globe is spinning & the camera's position is set. */}
-              <Route path="/">
-                <StartScreen />
-                <Rotate refToRotate={globeRef} xAxis yAxis negative speed={0.001} />
-                <Position refToPosition={globeRef} position={[0, 0, -3]} animate animateSpeed={0.1} />
-                <PositionCamera position={[0, 0, 5]} rotation={[0, 0, 0]} />
-              </Route>
-              {/* Start page -  Orbit Controls are now available and the heading as well as the subheading are now gone*/}
-              <Route path="/start">
-                <OrbitControls enablePan={false} minDistance={4.5} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
-                <Position refToPosition={globeRef} position={[0, 0, 0]} aniamte animateSpeed={0.1} />
-                <PositionCamera position={[0, 0, 5]} />
-              </Route>
-              {/* Take me there page - Orbit Controls are now locked again & the Take Me There assets are loaded. */}
-              <Route path="/map/:country">
-                <TakeMeThere />
-                <PositionCamera position={[0, 0, 0]} rotation={[0, 0, 0]} />
-                <Position refToPosition={globeRef} position={[4, 0, -3]} rotation={[getRandomInt(0, 6), getRandomInt(0, 6), 0]} animate animateSpeed={0.1} />
-              </Route>
-              {/* Information page - The globe is hidden from the user & all of the Information screen assets are shown. */}
-              <Route path="/map/:country/learn_more">
-                <PositionCamera rotation={[0, 0, 0]} position={[0, 0, 5]} />
-                <CoordinateScreen />
-              </Route>
-            </Switch>
-          </Router>
-        </CountryDataContext.Provider>
-      </Canvas>
+              {/* Displaying the loading status. */}
+              <NotRoute path="/">
+                {loading ?
+                  <Html fullscreen><h1 style={{position: "absolute", fontSize: "70px", color: "white", bottom: "10px", right: "10px", fontFamily: "'Raleway'"}}>{loadingStatus}</h1></Html> : null}
+              </NotRoute>
+              
+              {/* Parent element for the country's population. */}
+              <Switch>
+                {/* Main page - Orbit Contols are locked, globe is spinning & the camera's position is set. */}
+                <Route path="/">
+                  <StartScreen />
+                  <Rotate refToRotate={globeRef} xAxis yAxis negative speed={0.001} />
+                  <Position refToPosition={globeRef} position={[0, 0, -3]} animate animateSpeed={0.1} />
+                  <PositionCamera position={[0, 0, 5]} rotation={[0, 0, 0]} />
+                </Route>
+                {/* Start page -  Orbit Controls are now available and the heading as well as the subheading are now gone*/}
+                <Route path="/start">
+                  <OrbitControls enablePan={false} minDistance={4.5} maxDistance={10} minPolarAngle={0.5} maxPolarAngle={2.2}/>
+                  <Position refToPosition={globeRef} position={[0, 0, 0]} aniamte animateSpeed={0.1} />
+                  <PositionCamera position={[0, 0, 5]} />
+                </Route>
+                {/* Take me there page - Orbit Controls are now locked again & the Take Me There assets are loaded. */}
+                <Route path="/map/:country">
+                  <TakeMeThere />
+                  <PositionCamera position={[0, 0, 0]} rotation={[0, 0, 0]} />
+                  <Position refToPosition={globeRef} position={[4, 0, -3]} rotation={[getRandomInt(0, 6), getRandomInt(0, 6), 0]} animate animateSpeed={0.1} />
+                </Route>
+                {/* Information page - The globe is hidden from the user & all of the Information screen assets are shown. */}
+                <Route path="/map/:country/learn_more">
+                  <PositionCamera rotation={[0, 0, 0]} position={[0, 0, 5]} />
+                  <CoordinateScreen />
+                </Route>
+              </Switch>
+          </CountryDataContext.Provider>
+        </Canvas>
+        <About />
+      </Router>
     </>
   )
 
