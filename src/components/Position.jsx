@@ -42,8 +42,6 @@ export function Position({ refToPosition, position, rotation, animate, animateSp
         useFrame(() => {
             if (refToPosition.current === undefined) return;
     
-            console.log(refToPosition.current.rotation);
-    
             if (position) refToPosition.current.position.lerp(new Vector3(position[0], position[1], position[2]), animateSpeed);
     
             if (rotation) {

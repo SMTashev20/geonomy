@@ -31,6 +31,7 @@ export const WhiteHeading = styled.div`
     line-height: 211px;
     color: #FFFFFF;
     overflow: auto;
+    white-space: nowrap;
 `;
 
 export const Paragraph = styled.div`

@@ -41,6 +41,7 @@ export const LocationHeading = styled.div`
     font-weight: 700;
     font-size: 7rem;
     color: #FFFFFF;
+    white-space: nowrap;
 `;
 
 // Styling for the users' chosen country's description, gathered from an API.
