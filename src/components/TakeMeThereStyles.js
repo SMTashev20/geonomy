@@ -42,6 +42,9 @@ export const LocationHeading = styled.div`
     font-size: 7rem;
     color: #FFFFFF;
     white-space: nowrap;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 // Styling for the users' chosen country's description, gathered from an API.
@@ -56,9 +59,12 @@ export const LocationDescription = styled.div`
     font-style: normal;
     color: #FFFFFF;
     display: -webkit-box;
+    overflow: hidden;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    ::selection {
+        background: #ea4c89;
+    }    
 `;
 
 // Styling for a neumorphic-esc button, meant to take the user to the Information page.
@@ -79,4 +85,8 @@ export const FindOutMoreButton = styled.button`
     background: linear-gradient(127.29deg, #8BE3FF -5.93%, #BE8BFF 96.13%);
     box-shadow: inset 12px 12px 24px #6FB5CB, inset -24px -24px 48px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(24px 24px 48px rgba(0, 0, 0, 0.25));
+    ::selection {
+        background: #ea4c89;
+        color: #fff;
+    }
 `;

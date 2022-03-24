@@ -32,6 +32,9 @@ export const WhiteHeading = styled.div`
     color: #FFFFFF;
     overflow: auto;
     white-space: nowrap;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const Paragraph = styled.div`
@@ -62,6 +65,10 @@ export const Paragraph = styled.div`
         background-color: #2F0A7E;
         border-radius: 10px;
     }
+
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const Image = styled.div`
@@ -91,6 +98,9 @@ export const Population = styled.div`
     font-weight: 700;
     font-size: 37.5777px;
     color: white;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const PopulationText = styled.div`
@@ -98,6 +108,9 @@ export const PopulationText = styled.div`
     margin-top: 1.5vh;
     display: inline-block;
     text-align: right;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const PopulationGradient = styled.span`
@@ -105,6 +118,9 @@ export const PopulationGradient = styled.span`
     background-image: linear-gradient(100deg, #2EEBC9, #214DEC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const Finance = styled.div`
@@ -117,6 +133,9 @@ export const Finance = styled.div`
     font-size: 37.5777px;
     line-height: 45px;
     color: white;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const FinanceText = styled.div`
@@ -124,6 +143,9 @@ export const FinanceText = styled.div`
     margin-top: 1.5vh;
     display: inline-block;
     text-align: right;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const FinanceGradient = styled.span`
@@ -131,6 +153,9 @@ export const FinanceGradient = styled.span`
     background-image: linear-gradient(90.98deg, #FF5454, #FF54C5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const Climate = styled.div`
@@ -143,6 +168,9 @@ export const Climate = styled.div`
     font-size: 37.5777px;
     line-height: 45px;
     color: white;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const ClimateText = styled.div`
@@ -150,6 +178,9 @@ export const ClimateText = styled.div`
     margin-top: 1.5vh;
     display: inline-block;
     text-align: right;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const ClimateGradient = styled.span`
@@ -157,6 +188,9 @@ export const ClimateGradient = styled.span`
     background-image: linear-gradient(100deg, #FF4A4A, #CE9F44);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 export const InformationBackButton = styled.button`

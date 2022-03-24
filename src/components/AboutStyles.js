@@ -16,22 +16,6 @@ export const InformationButton = styled.button`
     borderRadius: "100%";
 `;
 
-// export const Parent = styled.section`
-//     textAlign: "center";
-//     color: "white";
-//     fontFamily: "Raleway, sans-serif";
-//     fontSize: "90px";
-//     fontWeight: "bold";
-// `;
-
-// export const Heading = styled.h3`
-//     textAlign: "center";
-//     color: "white";
-//     fontFamily: "Raleway, sans-serif";
-//     fontSize: "90px";
-//     fontWeight: "bold";
-// `;
-
 // Exoprting a styled div as a styled component to be used in About.jsx as an already designed out element.
 export const Card = styled.div`
     width: 35vw;
@@ -78,6 +62,9 @@ export const CardName = styled.div`
     font-family: "Inter", sans-serif;
     font-size: 30px;
     font-weight: 700;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
 
 // Styling for the team members' descriptions.
@@ -92,4 +79,7 @@ export const CardDescription = styled.div`
     font-style: normal;
     font-weight: 300;
     color: #C4C4C4;
+    ::selection {
+        background: #ea4c89;
+    }
 `;
