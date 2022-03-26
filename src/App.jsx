@@ -94,7 +94,8 @@ function App() {
                 {/* Main page - Orbit Contols are locked, globe is spinning & the camera's position is set. */}
                 <Route path="/">
                   <StartScreen />
-                  <Rotate refToRotate={globeRef} xAxis yAxis negative speed={0.001} />
+                  <Rotate refToRotate={globeRef} xAxis negative speed={0.00025} />
+                  <Rotate refToRotate={globeRef} yAxis negative speed={0.0007} />
                   <Position refToPosition={globeRef} position={[0, 0, -3]} animate animateSpeed={0.1} />
                   <PositionCamera position={[0, 0, 5]} rotation={[0, 0, 0]} />
                 </Route>
