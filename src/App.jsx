@@ -14,6 +14,7 @@ import { About } from './components/About';
 import { CoordinateScreen } from './components/CoordinateScreen';
 import { TakeMeThere } from './components/TakeMeThere';
 import { NotRoute } from './components/NotRoute';
+import geoJsonUrl from '../countries.geojson?url';
 
 /**
  * mmmmmmmmmmm
@@ -37,7 +38,7 @@ function getRandomInt(min, max) {
 
 // The App() function acts as a main function. The entirety of the website's pages are based on this function.
 function App() {
-  const [loading, loadingStatus, error, data] = useCountryData('https://datahub.io/core/geo-countries/r/countries.geojson');
+  const [loading, loadingStatus, error, data] = useCountryData(geoJsonUrl);
 
   const globeRef = useRef();
   const lightRef = useRef();

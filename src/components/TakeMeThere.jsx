@@ -59,7 +59,7 @@ export function TakeMeThere() {
                 <Container>
                     <Separator />
                     <LocationParent>
-                        <LocationHeading>{locationHeading === 'Macedonia' ? 'Budget Bulgaria' : locationHeading}</LocationHeading>
+                        <LocationHeading>{locationHeading}</LocationHeading>
                         <LocationDescription>{locationDescription}</LocationDescription>
                     </LocationParent>
                 </Container>
