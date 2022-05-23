@@ -75,7 +75,7 @@ export const CardDescription = styled.div`
     margin-top: 3vh;
     margin-left: 0.5vw;
     font-family: 'Roboto';
-    font-size: 18px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 300;
     color: #C4C4C4;
