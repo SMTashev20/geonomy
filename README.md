@@ -20,10 +20,10 @@
 ### Used technologies about the visual elements, docs and the communication
 <p align="left">
     <a href="https://www.figma.com/"><img src="https://img.icons8.com/color/344/figma--v1.png" alt="Figma logo" width=48px/></a>
-    <a href="https://github.com/"><img src="https://img.icons8.com/ios/344/github--v1.png#gh-dark-mode-only" alt="GitHub dark theme logo" width=48px /></a>
-    <a href="https://www.microsoft.com/en-ww/microsoft-teams/log-in"><img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width=48px /></a>
+    <a href="https://github.com/"><img src="https://img.icons8.com/nolan/344/github.png" alt="GitHub logo" width=48px /></a>
     <a href="https://www.microsoft.com/en-ww/microsoft-365/free-office-online-for-the-web"><img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo" width=48px /></a>
     <a href="https://www.microsoft.com/en-ww/microsoft-365/free-office-online-for-the-web"><img src="https://img.icons8.com/color/344/ms-powerpoint.png" alt="MS PowerPoint logo" width=48px /></a>
+    <a href="https://www.microsoft.com/en-ww/microsoft-teams/log-in"><img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width=48px /></a>
     <a href="https://www.adobe.com/creativecloud.html"><img src="https://www.adobe.com/content/dam/shared/images/product-icons/svg/creative-cloud.svg" alt="adobe creative cloud" width=48px /></a>
     <a href="https://concepts.app/en/"><img src="https://media.discordapp.net/attachments/915570532504703086/954703245484380250/9gI1IJAqeUWtrzE-64qgypUtxNI4hIDj-OjlQM5Zl3T_6BZeNb_huRfa57DdVxQHLWg.png" alt"concept" width=48px /></a>
 </p>
@@ -36,7 +36,7 @@
     <a href="https://javascript.info/"><img src="https://img.icons8.com/color/344/javascript--v1.png" alt="JavaScript" width=48px /></a>
     <a href="https://reactjs.org/docs/getting-started.html"><img src="https://img.icons8.com/color/344/react-native.png" alt="react" width=48px /></a>
     <a href="https://vitejs.dev/"><img src="https://vitejs.dev/logo.svg" alt="vite" width=48px /></a>
-    <a href="https://threejs.org/"><img src="https://aws1.discourse-cdn.com/standard17/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" alt="three js" width=48px /></a>
+    <a href="https://threejs.org/"><img src="https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" alt="three js" width=48px /></a>
 </p>
 
 ## 📄 Documents

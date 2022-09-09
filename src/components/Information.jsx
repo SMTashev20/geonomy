@@ -4,9 +4,9 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import { 
-    ParentSection,
-    DarkHeading,
-    WhiteHeading,
+    SectionController,
+    DarkCountryHeading,
+    WhiteCountryHeading,
     Paragraph,
     Image,
     Statistics,
@@ -90,9 +90,9 @@ export function Information({ country, countryData, ...props }) {
     }, []);
 
     return (
-        <ParentSection>
-            <DarkHeading>{countryText}</DarkHeading>
-            <WhiteHeading>{countryText}</WhiteHeading>
+        <SectionController>
+            <DarkCountryHeading>{countryText}</DarkCountryHeading>
+            <WhiteCountryHeading>{countryText}</WhiteCountryHeading>
             <Paragraph>{locationDesc}</Paragraph>
             {/* {imageLoading ? <Image /> :
                 <Image style={{backgroundImage: imageURL}} />} */}
@@ -130,6 +130,6 @@ export function Information({ country, countryData, ...props }) {
                 </Climate>
                     <ArrowBackIcon onClick={() => setLocation('/start')} style={{ fontSize: 50, position: "absolute", bottom: "30px", left: "30px", color: "#C4C4C4" }}/>
             </Statistics>
-        </ParentSection>
+        </SectionController>
     )
 }

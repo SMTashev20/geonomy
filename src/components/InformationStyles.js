@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-export const ParentSection = styled.section`
-    height: 100vh;
+export const SectionController = styled.section`
+    height: 200vh;
     background-color: #0E0034;
-    overflow: hidden;
 `;
 
-export const DarkHeading = styled.div`
+export const DarkCountryHeading = styled.div`
     position: absolute;
     width: 100vw;
     white-space: nowrap;
@@ -19,7 +18,7 @@ export const DarkHeading = styled.div`
     overflow: hidden;
 `;
 
-export const WhiteHeading = styled.div`
+export const WhiteCountryHeading = styled.div`
     position: absolute;
     padding-bottom: 10vh;
     margin-left: 6vw;
