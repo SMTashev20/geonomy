@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "~5.11.0",
@@ -15,6 +16,7 @@
     "@react-three/drei": "~9.56.12",
     "@react-three/fiber": "~8.10.1",
     "braintree-jsdoc-template": "~3.3.0",
+    "framer-motion": "^9.0.0",
     "react": "~18.2.0",
     "react-dom": "~18.2.0",
     "react-spring": "~9.6.1",
