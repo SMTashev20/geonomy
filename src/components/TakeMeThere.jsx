@@ -4,15 +4,6 @@ import { useRoute, useLocation } from 'wouter';
 import { useContext, useEffect, useState } from 'react';
 import { fetchCountryDesc } from '../util/wikipediaApi';
 import CountryDataContext from '../CountryDataContext';
-import { 
-    TemporarySection,
-    Container,
-    Separator,
-    LocationParent,
-    LocationHeading,
-    LocationDescription,
-    FindOutMoreButton
-} from './TakeMeThereStyles';
 import {
     Heading, Divider, Button,
     Box,
@@ -81,6 +72,7 @@ export function TakeMeThere() {
                         border={'none'} borderRadius={'64px'} 
                         background={'linear-gradient(127.29deg, #8BE3FF -5.93%, #BE8BFF 96.13%)'} 
                         boxShadow={'inset 12px 12px 24px #6FB5CB, inset -24px -24px 48px rgba(0, 0, 0, 0.25)'}
+                        onClick={() => setLocation(`/map/${params.country}/learn_more`)}
                     >
                         TAKE ME THERE
                     </Button>
@@ -88,17 +80,6 @@ export function TakeMeThere() {
             </Box>
 
             {/* TODO: refactor code to have only one parent container with shared styling */}
-
-            {/* <TemporarySection>
-                <Container>
-                    <Separator />
-                    <LocationParent>
-                        <LocationHeading>{locationHeading}</LocationHeading>
-                        <LocationDescription>{locationDescription}</LocationDescription>
-                    </LocationParent>
-                </Container>
-                <FindOutMoreButton onClick={() => setLocation(`/map/${params.country}/learn_more`)}>TAKE ME THERE <ArrowForwardIosIcon style={{ fontSize: "20" }}/></FindOutMoreButton>
-            </TemporarySection> */}
         </Html>
     )
 }
