@@ -26,9 +26,14 @@ import {
     Box, Center,
     Image as ChakraImage, Button,
     Text as ChakraText, Heading,
-    Grid, GridItem,
+    Grid, GridItem, Flex, Spacer,
     Stack, HStack, VStack
 } from "@chakra-ui/react";
+
+import { 
+    PhoneIcon, 
+} from '@chakra-ui/icons'
+// more icons tba
 
 import { useState, useEffect, useContext } from 'react';
 import { fetchCountryDesc, fetchCountryImage } from '../util/wikipediaApi';
@@ -99,14 +104,13 @@ export function Information({ country, countryData, ...props }) {
     }, []);
 
     return (
-        <Box height={'200vh'} width={'100vw'} backgroundColor={'#0E0034'} fontFamily={'Inter, sans-serif'}>
+        <Box height={'200vh'} width={'100vw'} backgroundColor={'#0E0034'} fontFamily={'Inter, sans-serif'}_selection={{ backgroundColor: '#ea4c89' }}>
             {/* <IconButton aria-label={'Return to preview page'} /> */}
             <Box border={'1px solid red'} height={'30vh'}>
                 <Heading position={'absolute'} as={'h1'} fontSize={'20.5rem'} fontWeight={700} color={'#160643'} marginTop={'-5.5vw'} userSelect={'none'}>{countryText}</Heading>
                 <Heading position={'absolute'} as={'h1'} fontSize={'14rem'} fontWeight={700} color={'#FFF'}>{countryText}</Heading>
             </Box>
             <Box border={'1px solid red'} height={'70vh'}>
-
                 <Center>
                     <Grid
                         h={'140vh'}
@@ -117,17 +121,105 @@ export function Information({ country, countryData, ...props }) {
                         templateColumns={'repeat(13, 1fr)'}
                         gap={'5vw'}
                         marginTop={'10vh'}
-
+                        fontFamily={'Inter, sans-serif'}
                     >
                         {/* start of first row */}
-                        <GridItem borderRadius={'20px'} rowStart={1} rowSpan={1} colStart={2}  colEnd={5}  bg='papayawhip' />
-                        <GridItem borderRadius={'20px'} rowStart={1} rowSpan={1} colStart={6}  colEnd={9}  bg='papayawhip' />
-                        <GridItem borderRadius={'20px'} rowStart={1} rowSpan={1} colStart={10} colEnd={13} bg='papayawhip' />
+                        <GridItem borderRadius={'2vh'} rowStart={1} rowSpan={1} colStart={2}  colEnd={5}  bg='papayawhip'>
+                            <Box>
+                                <Center>
+                                    <Box
+                                        h={'6vh'} w={'6vh'} marginTop={'3vh'}
+                                        border={'1px solid #B49FBC'} borderRadius={'100%'} backgroundColor={'red'}
+                                    />
+                                </Center>
+                                <Center marginTop={'2vh'} fontSize={'2.25rem'} fontWeight={700}>
+                                    <ChakraText>~</ChakraText>
+                                    <ChakraText>22 </ChakraText>
+                                    <ChakraText> million people</ChakraText>
+                                </Center>
+                            </Box>
+                        </GridItem>
+                        
+                        <GridItem borderRadius={'2vh'} rowStart={1} rowSpan={1} colStart={6}  colEnd={9}  bg='papayawhip'>
+                            <Box>
+                                <Center>
+                                    <Box
+                                        h={'6vh'} w={'6vh'} marginTop={'3vh'}
+                                        border={'1px solid #B49FBC'} borderRadius={'100%'} backgroundColor={'red'}
+                                    />
+                                </Center>
+                                <Center marginTop={'2vh'} fontSize={'2.25rem'} fontWeight={700}>
+                                    <ChakraText>~</ChakraText>
+                                    <ChakraText>22 </ChakraText>
+                                    <ChakraText> million people</ChakraText>
+                                </Center>
+                            </Box>
+                        </GridItem>
+                        
+                        <GridItem borderRadius={'2vh'} rowStart={1} rowSpan={1} colStart={10} colEnd={13} bg='papayawhip'>
+                            <Box>
+                                <Center>
+                                    <Box
+                                        h={'6vh'} w={'6vh'} marginTop={'3vh'}
+                                        border={'1px solid #B49FBC'} borderRadius={'100%'} backgroundColor={'red'}
+                                    />
+                                </Center>
+                                <Center marginTop={'2vh'} fontSize={'2.25rem'} fontWeight={700}>
+                                    <ChakraText>~</ChakraText>
+                                    <ChakraText>22 </ChakraText>
+                                    <ChakraText> million people</ChakraText>
+                                </Center>
+                            </Box>
+                        </GridItem>
 
                         {/* start of second row */}
-                        <GridItem borderRadius={'20px'} rowStart={2} rowSpan={1} colStart={2}  colEnd={5}  bg='papayawhip' />
-                        <GridItem borderRadius={'20px'} rowStart={2} rowSpan={1} colStart={6}  colEnd={9}  bg='papayawhip' />
-                        <GridItem borderRadius={'20px'} rowStart={2} rowSpan={1} colStart={10} colEnd={13} bg='papayawhip' />
+                        <GridItem borderRadius={'2vh'} rowStart={2} rowSpan={1} colStart={2}  colEnd={5}  bg='papayawhip'>
+                            <Box>
+                                <Center>
+                                    <Box
+                                        h={'6vh'} w={'6vh'} marginTop={'3vh'}
+                                        border={'1px solid #B49FBC'} borderRadius={'100%'} backgroundColor={'red'}
+                                    />
+                                </Center>
+                                <Center marginTop={'2vh'} fontSize={'2.25rem'} fontWeight={700}>
+                                    <ChakraText>~</ChakraText>
+                                    <ChakraText>22 </ChakraText>
+                                    <ChakraText> million people</ChakraText>
+                                </Center>
+                            </Box>
+                        </GridItem>
+                        
+                        <GridItem borderRadius={'2vh'} rowStart={2} rowSpan={1} colStart={6}  colEnd={9}  bg='papayawhip'>
+                            <Box>
+                                <Center>
+                                    <Box
+                                        h={'6vh'} w={'6vh'} marginTop={'3vh'}
+                                        border={'1px solid #B49FBC'} borderRadius={'100%'} backgroundColor={'red'}
+                                    />
+                                </Center>
+                                <Center marginTop={'2vh'} fontSize={'2.25rem'} fontWeight={700}>
+                                    <ChakraText>~</ChakraText>
+                                    <ChakraText>22 </ChakraText>
+                                    <ChakraText> million people</ChakraText>
+                                </Center>
+                            </Box>
+                        </GridItem>
+                        
+                        <GridItem borderRadius={'2vh'} rowStart={2} rowSpan={1} colStart={10} colEnd={13} bg='papayawhip'>
+                            <Box>
+                                <Center>
+                                    <Box
+                                        h={'6vh'} w={'6vh'} marginTop={'3vh'}
+                                        border={'1px solid #B49FBC'} borderRadius={'100%'} backgroundColor={'red'}
+                                    />
+                                </Center>
+                                <Center marginTop={'2vh'} fontSize={'2.25rem'} fontWeight={700}>
+                                    <ChakraText>~</ChakraText>
+                                    <ChakraText>22 </ChakraText>
+                                    <ChakraText> million people</ChakraText>
+                                </Center>
+                            </Box>
+                        </GridItem>
                     </Grid>
                 </Center>
             </Box>
