@@ -21,6 +21,15 @@ import {
     ClimateGradient,
     InformationBackButton
 } from './InformationStyles';
+
+import {
+    Box, Center,
+    Image as ChakraImage, Button,
+    Text as ChakraText, Heading,
+    Grid, GridItem,
+    Stack, HStack, VStack
+} from "@chakra-ui/react";
+
 import { useState, useEffect, useContext } from 'react';
 import { fetchCountryDesc, fetchCountryImage } from '../util/wikipediaApi';
 import { useCountryStats } from '../util/worldPopApi';
@@ -90,46 +99,79 @@ export function Information({ country, countryData, ...props }) {
     }, []);
 
     return (
-        <SectionController>
-            <DarkCountryHeading>{countryText}</DarkCountryHeading>
-            <WhiteCountryHeading>{countryText}</WhiteCountryHeading>
-            <Paragraph>{locationDesc}</Paragraph>
-            {/* {imageLoading ? <Image /> :
-                <Image style={{backgroundImage: imageURL}} />} */}
-            <Image style={{backgroundImage: imageLoading ? '' : `url(${imageURL})`, backgroundSize: '100% 100%'}} />
-            <Statistics>
-                <Population>
-                    <PersonIcon style={{ fontSize: 70 }}></PersonIcon>
-                    <PopulationText>
-                        {statsLoading && !statsError ? <PopulationGradient>Thinking...</PopulationGradient> :
-                            <>
-                                ~<PopulationGradient>
-                                    {stats ? numberToWords(stats.population * 1000)[0].toFixed(1) : "¯\\_(ツ)_/¯"}
-                                </PopulationGradient> {stats ? numberToWords(stats.population * 1000)[1] : ""} people
-                            </>}
-                    </PopulationText>
-                </Population>
-                <Finance>
-                    <AttachMoneyIcon style={{ fontSize: 70 }}></AttachMoneyIcon>
-                    <FinanceText>
-                        {statsLoading && !statsError ? <FinanceGradient>Thinking...</FinanceGradient> :
-                            <>The currency is <FinanceGradient>{stats ? stats.currency.code : "¯\\_(ツ)_/¯"}</FinanceGradient> ({stats ? stats.currency.name : "¯\\_(ツ)_/¯"})</>}
-                    </FinanceText>
-                </Finance>
-                <Climate>
-                    <WhatshotIcon style={{ fontSize: 70 }}></WhatshotIcon>
-                    <ClimateText>
-                        {statsLoading ? 
-                            <ClimateGradient>Thinking...</ClimateGradient> :
-                            <ClimateGradient>
-                                {stats ? stats[['gdp', 'region', 'unemployment', 'co2_emissions', 'capital'][randomNumber]] : "¯\\_(ツ)_/¯"}
-                            </ClimateGradient>}
-                        {statsLoading ? 
-                            "" : [' USD (GDP)', ' is the region', '% (unemployment)', ' CO2e (emissions)', ' is the capital'][randomNumber]}
-                    </ClimateText>
-                </Climate>
-                    <ArrowBackIcon onClick={() => setLocation('/start')} style={{ fontSize: 50, position: "absolute", bottom: "30px", left: "30px", color: "#C4C4C4" }}/>
-            </Statistics>
-        </SectionController>
+        <Box height={'200vh'} width={'100vw'} backgroundColor={'#0E0034'} fontFamily={'Inter, sans-serif'}>
+            {/* <IconButton aria-label={'Return to preview page'} /> */}
+            <Box border={'1px solid red'} height={'30vh'}>
+                <Heading position={'absolute'} as={'h1'} fontSize={'20.5rem'} fontWeight={700} color={'#160643'} marginTop={'-5.5vw'} userSelect={'none'}>{countryText}</Heading>
+                <Heading position={'absolute'} as={'h1'} fontSize={'14rem'} fontWeight={700} color={'#FFF'}>{countryText}</Heading>
+            </Box>
+            <Box border={'1px solid red'} height={'70vh'}>
+
+                <Center>
+                    <Grid
+                        h={'140vh'}
+                        w={'100vw'}
+                        // h={'inherit'}
+                        // w={'inherit'}
+                        templateRows={'repeat(5, 1fr)'}
+                        templateColumns={'repeat(13, 1fr)'}
+                        gap={'5vw'}
+                        marginTop={'10vh'}
+
+                    >
+                        {/* start of first row */}
+                        <GridItem borderRadius={'20px'} rowStart={1} rowSpan={1} colStart={2}  colEnd={5}  bg='papayawhip' />
+                        <GridItem borderRadius={'20px'} rowStart={1} rowSpan={1} colStart={6}  colEnd={9}  bg='papayawhip' />
+                        <GridItem borderRadius={'20px'} rowStart={1} rowSpan={1} colStart={10} colEnd={13} bg='papayawhip' />
+
+                        {/* start of second row */}
+                        <GridItem borderRadius={'20px'} rowStart={2} rowSpan={1} colStart={2}  colEnd={5}  bg='papayawhip' />
+                        <GridItem borderRadius={'20px'} rowStart={2} rowSpan={1} colStart={6}  colEnd={9}  bg='papayawhip' />
+                        <GridItem borderRadius={'20px'} rowStart={2} rowSpan={1} colStart={10} colEnd={13} bg='papayawhip' />
+                    </Grid>
+                </Center>
+            </Box>
+        </Box>
+        // <SectionController>
+        //     <DarkCountryHeading>{countryText}</DarkCountryHeading>
+        //     <WhiteCountryHeading>{countryText}</WhiteCountryHeading>
+        //     <Paragraph>{locationDesc}</Paragraph>
+        //     {/* {imageLoading ? <Image /> :
+        //         <Image style={{backgroundImage: imageURL}} />} */}
+        //     <Image style={{backgroundImage: imageLoading ? '' : `url(${imageURL})`, backgroundSize: '100% 100%'}} />
+        //     <Statistics>
+        //         <Population>
+        //             <PersonIcon style={{ fontSize: 70 }}></PersonIcon>
+        //             <PopulationText>
+        //                 {statsLoading && !statsError ? <PopulationGradient>Thinking...</PopulationGradient> :
+        //                     <>
+        //                         ~<PopulationGradient>
+        //                             {stats ? numberToWords(stats.population * 1000)[0].toFixed(1) : "¯\\_(ツ)_/¯"}
+        //                         </PopulationGradient> {stats ? numberToWords(stats.population * 1000)[1] : ""} people
+        //                     </>}
+        //             </PopulationText>
+        //         </Population>
+        //         <Finance>
+        //             <AttachMoneyIcon style={{ fontSize: 70 }}></AttachMoneyIcon>
+        //             <FinanceText>
+        //                 {statsLoading && !statsError ? <FinanceGradient>Thinking...</FinanceGradient> :
+        //                     <>The currency is <FinanceGradient>{stats ? stats.currency.code : "¯\\_(ツ)_/¯"}</FinanceGradient> ({stats ? stats.currency.name : "¯\\_(ツ)_/¯"})</>}
+        //             </FinanceText>
+        //         </Finance>
+        //         <Climate>
+        //             <WhatshotIcon style={{ fontSize: 70 }}></WhatshotIcon>
+        //             <ClimateText>
+        //                 {statsLoading ? 
+        //                     <ClimateGradient>Thinking...</ClimateGradient> :
+        //                     <ClimateGradient>
+        //                         {stats ? stats[['gdp', 'region', 'unemployment', 'co2_emissions', 'capital'][randomNumber]] : "¯\\_(ツ)_/¯"}
+        //                     </ClimateGradient>}
+        //                 {statsLoading ? 
+        //                     "" : [' USD (GDP)', ' is the region', '% (unemployment)', ' CO2e (emissions)', ' is the capital'][randomNumber]}
+        //             </ClimateText>
+        //         </Climate>
+        //             <ArrowBackIcon onClick={() => setLocation('/start')} style={{ fontSize: 50, position: "absolute", bottom: "30px", left: "30px", color: "#C4C4C4" }}/>
+        //     </Statistics>
+        // </SectionController>
     )
 }
