@@ -15,7 +15,8 @@ import {
 } from './TakeMeThereStyles';
 import {
     Heading, Divider, Button,
-    Box, Link, Text as ChakraText,
+    Box,
+    Link, Text as ChakraText,
     Center
 } from "@chakra-ui/react";
 
@@ -59,19 +60,18 @@ export function TakeMeThere() {
     return (
         <Html as='div' fullscreen>
             <Box fontFamily={'Inter, sans-serif'}>
-                <Box color={'#fff'} marginTop={'30vh'} marginLeft={'10vw'}>
+                <Box color={'#fff'} marginTop={'30vh'} marginLeft={'10vw'} >
                     <Divider 
-                        width={'0.55vw'} orientation={'vertical'} height={'1hv'} borderWidth={'1vw'} 
-                        background={'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)'}
-                        border={'10px'}
-                        borderRadius={'7px'}
+                        width={'0.55vw'} orientation={'horizontal'} height={'inherit'} 
+                        border={'10px'} borderWidth={'1vw'} borderRadius={'7px'} borderColor={'none'}
+                        background={'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)'}                    
                     />
                     
-                    <Heading fontWeight={700} fontSize={'7rem'}>
+                    <Heading width={'30vw'} fontWeight={700} fontSize={'7rem'} _selection={{ backgroundColor: '#ea4c89' }}>
                         {locationHeading}
                     </Heading>
                     
-                    <ChakraText width={'30vw'} fontWeight={400} fontSize={'1.5rem'}>
+                    <ChakraText width={'30vw'} fontWeight={400} fontSize={'1.5rem'} _selection={{ backgroundColor: '#ea4c89' }}>
                         "Resort aah yes yes, da, vodka, ich schpreche deustch my drugariu" -Boris Savov
                     </ChakraText>
 
