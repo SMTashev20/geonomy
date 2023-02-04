@@ -110,6 +110,7 @@ export function Information({ country, countryData, ...props }) {
                 <Heading position={'absolute'} as={'h1'} fontSize={'20.5rem'} fontWeight={700} color={'#160643'} marginTop={'-5.5vw'} userSelect={'none'}>{countryText}</Heading>
                 <Heading position={'absolute'} as={'h1'} fontSize={'14rem'} fontWeight={700} color={'#FFF'}>{countryText}</Heading>
             </Box>
+            <ChakraImage position={'absolute'} h={'50vh'} w={'100vw'} src='https://media.discordapp.net/attachments/884052584762077245/1071387540961099846/wave.png' userSelect={'none'}/>
             <Box border={'1px solid red'} height={'70vh'}>
                 <Center>
                     <Grid
