@@ -65,7 +65,7 @@ const Globe = forwardRef((props, ref) => {
 
     // scene init
     useEffect(() => {
-        console.log('scene init');
+        console.log('INFO: Scene init');
         bufferScene.current.background = new THREE.Color('#000000');
         bufferCamera.current.position.setZ(0);
 
@@ -119,7 +119,7 @@ const Globe = forwardRef((props, ref) => {
     
     // scene render
     useEffect(() => {
-        console.log('render');
+        console.log('INFO: Renderer up');
         gl.setRenderTarget(bufferTexture.current);
         gl.render(bufferScene.current, bufferCamera.current);
         gl.setRenderTarget(null);
