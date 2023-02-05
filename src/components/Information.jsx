@@ -104,20 +104,20 @@ export function Information({ country, countryData, ...props }) {
     }, []);
 
     return (
-        <Box height={'200vh'} width={'100vw'} backgroundColor={'#0E0034'} fontFamily={'Inter, sans-serif'}_selection={{ backgroundColor: '#ea4c89' }}>
+        <Box overflow={'visible'} height={'200vh'} width={'100vw'} backgroundColor={'#0E0034'} fontFamily={'Inter, sans-serif'}_selection={{ backgroundColor: '#ea4c89' }}>
             {/* <IconButton aria-label={'Return to preview page'} /> */}
-            <Box border={'1px solid red'} height={'30vh'}>
+            <Box height={'30vh'}>
                 <Heading position={'absolute'} as={'h1'} fontSize={'20.5rem'} fontWeight={700} color={'#160643'} marginTop={'-5.5vw'} userSelect={'none'}>{countryText}</Heading>
                 <Heading position={'absolute'} as={'h1'} fontSize={'14rem'} fontWeight={700} color={'#FFF'}>{countryText}</Heading>
             </Box>
             <ChakraImage position={'absolute'} h={'50vh'} w={'100vw'} src='https://media.discordapp.net/attachments/884052584762077245/1071387540961099846/wave.png' userSelect={'none'}/>
-            <Box border={'1px solid red'} height={'70vh'}>
+            {/* chore: replace absolute link */}
+            <Box height={'70vh'}>
                 <Center>
                     <Grid
                         h={'140vh'}
                         w={'100vw'}
-                        // h={'inherit'}
-                        // w={'inherit'}
+                        zIndex={2}
                         templateRows={'repeat(5, 1fr)'}
                         templateColumns={'repeat(13, 1fr)'}
                         gap={'5vw'}
