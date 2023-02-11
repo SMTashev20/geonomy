@@ -1,0 +1,19 @@
+{
+  "name": "worldpop-api-passthrough",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "MODE=prod node index.js",
+    "dev": "MODE=dev node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL",
+  "dependencies": {
+    "axios": "~1.3.2",
+    "cors": "~2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "~4.18.2"
+  }
+}
