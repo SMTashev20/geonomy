@@ -119,7 +119,7 @@ const Globe = forwardRef((props, ref) => {
     
     // scene render
     useEffect(() => {
-        console.log('INFO: Renderer up');
+        console.log('INFO: Scene rendered');
         gl.setRenderTarget(bufferTexture.current);
         gl.render(bufferScene.current, bufferCamera.current);
         gl.setRenderTarget(null);

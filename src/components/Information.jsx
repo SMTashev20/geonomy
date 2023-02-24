@@ -104,9 +104,9 @@ export function Information({ country, countryData, ...props }) {
     }, []);
 
     return (
-        <Box overflow={'visible'} height={'200vh'} width={'100vw'} backgroundColor={'#0E0034'} fontFamily={'Inter, sans-serif'}_selection={{ backgroundColor: '#ea4c89' }}>
+        <Box height={'200vh'} width={'100vw'} backgroundColor={'#0E0034'} fontFamily={'Inter, sans-serif'}_selection={{ backgroundColor: '#ea4c89' }}>
             {/* <IconButton aria-label={'Return to preview page'} /> */}
-            <Box height={'30vh'}>
+            <Box height={'30vh'} marginLeft={'2vw'}>
                 <Heading position={'absolute'} as={'h1'} fontSize={'20.5rem'} fontWeight={700} color={'#160643'} marginTop={'-5.5vw'} userSelect={'none'}>{countryText}</Heading>
                 <Heading position={'absolute'} as={'h1'} fontSize={'14rem'} fontWeight={700} color={'#FFF'}>{countryText}</Heading>
             </Box>
@@ -114,7 +114,7 @@ export function Information({ country, countryData, ...props }) {
             {/* chore: replace absolute link */}
             <Box height={'70vh'}>
                 <Center>
-                    <Grid
+                    <Grid   
                         h={'140vh'}
                         w={'100vw'}
                         zIndex={2}

@@ -52,11 +52,12 @@ export function TakeMeThere() {
         <Html as='div' fullscreen>
             <Box fontFamily={'Inter, sans-serif'}>
                 <Box color={'#fff'} marginTop={'30vh'} marginLeft={'10vw'} >
-                    <Divider 
-                        width={'0.55vw'} orientation={'horizontal'} height={'inherit'} 
+                    <Divider orientation='vertical' height={'10px'} borderColor={'#f00'}/>
+                    {/* <Divider 
+                        width={'0.55vw'} orientation={'vertical'} height={'inherit'} 
                         border={'10px'} borderWidth={'1vw'} borderRadius={'7px'} borderColor={'none'}
                         background={'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)'}                    
-                    />
+                    /> */}
                     
                     <Heading width={'30vw'} fontWeight={700} fontSize={'7rem'} _selection={{ backgroundColor: '#ea4c89' }}>
                         {locationHeading}
